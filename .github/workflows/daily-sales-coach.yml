@@ -1,0 +1,39 @@
+name: Daily Sales Coach
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'   # 9am ET Mon–Fri — adjust UTC offset for your timezone
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-sales-coach:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Run sales coach agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GONG_MCP_TOKEN:    ${{ secrets.GONG_MCP_TOKEN }}
+          GONG_MCP_URL:      ${{ secrets.GONG_MCP_URL }}
+          GONG_TEAM_EMAILS:  ${{ secrets.GONG_TEAM_EMAILS }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: node index.js
+
+      - name: Commit score history
+        run: |
+          git config user.name  "Sales Coach Bot"
+          git config user.email "sales-coach-bot@users.noreply.github.com"
+          git add history/scores.json
+          git diff --staged --quiet || git commit -m "chore: update score history [skip ci]"
+          git push
