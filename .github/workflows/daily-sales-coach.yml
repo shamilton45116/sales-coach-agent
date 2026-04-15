@@ -2,7 +2,7 @@ name: Daily Sales Coach
 
 on:
   schedule:
-    - cron: '0 13 * * 1-5'   # 9am ET Mon–Fri — adjust UTC offset for your timezone
+    - cron: '0 13 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -11,10 +11,11 @@ permissions:
 jobs:
   run-sales-coach:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
-- uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
@@ -22,11 +23,10 @@ jobs:
 
       - name: Run sales coach agent
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GONG_MCP_TOKEN:    ${{ secrets.GONG_MCP_TOKEN }}
-          GONG_MCP_URL:      ${{ secrets.GONG_MCP_URL }}
-          GONG_TEAM_EMAILS:  ${{ secrets.GONG_TEAM_EMAILS }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GONG_ACCESS_KEY:        ${{ secrets.GONG_ACCESS_KEY }}
+          GONG_ACCESS_KEY_SECRET: ${{ secrets.GONG_ACCESS_KEY_SECRET }}
+          ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_WEBHOOK_URL:      ${{ secrets.SLACK_WEBHOOK_URL }}
         run: node index.js
 
       - name: Commit score history
