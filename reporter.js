@@ -53,6 +53,18 @@ async function sendDailyReport(scoredCalls, wowTrends = []) {
   }
 
   console.log(`Slack report posted (${validCalls.length} scorecards in thread)`);
+
+  // 3. Post brief summary to #agent-sales-coach
+  const summaryChannel = process.env.SLACK_SUMMARY_CHANNEL;
+  if (summaryChannel) {
+    const agentBlocks = buildAgentSummaryBlocks(validCalls, wowTrends, date);
+    await slackPost(token, {
+      channel: summaryChannel,
+      blocks:  agentBlocks,
+      text:    `Sales Coach update — ${date}`,
+    });
+    console.log('Agent summary posted to #agent-sales-coach');
+  }
 }
 
 // ── Slack API ─────────────────────────────────────────────────────────────
@@ -228,6 +240,78 @@ function buildScorecardBlocks(call) {
     {
       type: 'section',
       text: { type: 'mrkdwn', text: `🎯 *Moment of truth*\n_"${f.momentOfTruth}"_` },
+    },
+  ];
+}
+
+
+// ── Agent summary (posted to #agent-sales-coach) ─────────────────────────
+function buildAgentSummaryBlocks(calls, wowTrends, date) {
+  const repGroups  = groupByRep(calls);
+  const totalAvg   = Math.round(calls.reduce((s, c) => s + c.feedback.overall, 0) / calls.length);
+
+  // Team trend from WoW data
+  let teamTrend = 'stable';
+  if (wowTrends.length >= 2) {
+    const improving = wowTrends.filter(r => (r.delta || 0) > 3).length;
+    const declining = wowTrends.filter(r => (r.delta || 0) < -3).length;
+    if (improving > declining) teamTrend = 'improving';
+    else if (declining > improving) teamTrend = 'declining';
+  }
+
+  // Top performer — highest avg score
+  const top = repGroups[0];
+
+  // Rep needing support — lowest avg score among those with Needs Work or Struggling
+  const needsSupport = [...repGroups]
+    .sort((a, b) => a.avgScore - b.avgScore)
+    .find(r => r.verdict === 'Needs Work' || r.verdict === 'Struggling');
+
+  // Most common coaching gap — most repeated coaching note topic across all calls
+  const noteWords = calls.flatMap(c =>
+    (c.feedback?.coachingNotes || []).map(n => n.note)
+  );
+  const commonGap = noteWords.length
+    ? noteWords.sort((a, b) =>
+        noteWords.filter(v => v === b).length - noteWords.filter(v => v === a).length
+      )[0]
+    : 'No consistent gaps identified this period';
+
+  // Winning pattern — most repeated strength across all calls
+  const strengthWords = calls.flatMap(c =>
+    (c.feedback?.strengths || []).map(s => s.point)
+  );
+  const winningPattern = strengthWords.length
+    ? strengthWords.sort((a, b) =>
+        strengthWords.filter(v => v === b).length - strengthWords.filter(v => v === a).length
+      )[0]
+    : 'No consistent winning patterns identified yet';
+
+  // Top performer highlight from their strengths
+  const topCall   = calls.filter(c => c.rep === top?.rep).sort((a, b) => b.feedback.overall - a.feedback.overall)[0];
+  const topStrength = topCall?.feedback?.strengths?.[0]?.point || 'Strong overall performance';
+
+  // Support note from coaching notes
+  const supportCall = needsSupport
+    ? calls.filter(c => c.rep === needsSupport.rep).sort((a, b) => a.feedback.overall - b.feedback.overall)[0]
+    : null;
+  const supportNote = supportCall?.feedback?.priorityAction || null;
+
+  const lines = [
+    `*Sales Coach update — ${date}*`,
+    `*Calls reviewed:* ${calls.length}`,
+    `*Team trend:* ${teamTrend === 'improving' ? '↑' : teamTrend === 'declining' ? '↓' : '→'} ${teamTrend.charAt(0).toUpperCase() + teamTrend.slice(1)} — avg score ${totalAvg}/100`,
+    `*Top performer this week:* ${top?.rep || '—'} — ${topStrength}`,
+    `*Rep needing support:* ${needsSupport ? `${needsSupport.rep} — ${supportNote || 'See full report for details'}` : 'None flagged'}`,
+    `*Most common coaching gap:* ${commonGap}`,
+    `*Winning pattern to reinforce:* ${winningPattern}`,
+    `*Full report:* Say "run the sales coaching report" in #chief-of-staff to get the full detail.`,
+  ].join('\n');
+
+  return [
+    {
+      type: 'section',
+      text: { type: 'mrkdwn', text: lines },
     },
   ];
 }
