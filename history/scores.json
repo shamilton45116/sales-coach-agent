@@ -1,3 +1,140 @@
 {
-  "2026-04-15": []
+  "2026-04-15": [],
+  "2026-04-16": [
+    {
+      "rep": "Joshua Kelonda",
+      "callId": "3515668196418868602",
+      "title": "Apollo Supply + TOOLBX (Technical Discussion)",
+      "overall": 54,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 65,
+        "rapport": 75,
+        "objectionHandling": 0,
+        "talkListenRatio": 85,
+        "nextStepsClose": 0,
+        "productKnowledge": 45
+      }
+    },
+    {
+      "rep": "Scott Hamilton",
+      "callId": "1911951705685951781",
+      "title": "TOOLBX <> CSG Forge Connect",
+      "overall": 23,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 25,
+        "rapport": 45,
+        "objectionHandling": 0,
+        "talkListenRatio": 20,
+        "nextStepsClose": 15,
+        "productKnowledge": 35
+      }
+    },
+    {
+      "rep": "Pouyan Mirsaeidi",
+      "callId": "2435536303517636191",
+      "title": "Timberline Enterprises LLC + TOOLBX",
+      "overall": 45,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 25,
+        "rapport": 65,
+        "objectionHandling": 35,
+        "talkListenRatio": 70,
+        "nextStepsClose": 20,
+        "productKnowledge": 55
+      }
+    },
+    {
+      "rep": "Michelle Kubas",
+      "callId": "5310087116665238061",
+      "title": "TOOLBX & LA Roofing",
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 25,
+        "rapport": 35,
+        "objectionHandling": 45,
+        "talkListenRatio": 15,
+        "nextStepsClose": 20,
+        "productKnowledge": 65,
+        "overall": 34
+      }
+    },
+    {
+      "rep": "Evan He",
+      "callId": "5127906776661942454",
+      "title": "Rabidou / Toolbx - Moore Infra Setup",
+      "overall": 25,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 5,
+        "rapport": 75,
+        "objectionHandling": 0,
+        "talkListenRatio": 85,
+        "nextStepsClose": 0,
+        "productKnowledge": 60
+      }
+    },
+    {
+      "rep": "Evan He",
+      "callId": "8790432249628043548",
+      "title": "Oxford Ace - Eagle & Machine Access Set Up",
+      "overall": 30,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 5,
+        "rapport": 45,
+        "objectionHandling": 0,
+        "talkListenRatio": 85,
+        "nextStepsClose": 20,
+        "productKnowledge": 25
+      }
+    },
+    {
+      "rep": "Christine Hall",
+      "callId": "3672886047130611711",
+      "title": "Tri - County | TOOLBX - Sync",
+      "verdict": "Solid",
+      "scores": {
+        "discovery": 72,
+        "rapport": 85,
+        "objectionHandling": 65,
+        "talkListenRatio": 85,
+        "nextStepsClose": 25,
+        "productKnowledge": 78,
+        "overall": 68
+      }
+    },
+    {
+      "rep": "Omar Sheikh",
+      "callId": "8934934098799997001",
+      "title": "Nations Best / Toolbx - Bank Reporting",
+      "overall": 45,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 45,
+        "rapport": 65,
+        "objectionHandling": 0,
+        "talkListenRatio": 70,
+        "nextStepsClose": 35,
+        "productKnowledge": 55
+      }
+    },
+    {
+      "rep": "Michelle Kubas",
+      "callId": "8008463802854780095",
+      "title": "Inbound Call with (662) 312-5459",
+      "overall": 49,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 25,
+        "rapport": 75,
+        "objectionHandling": 15,
+        "talkListenRatio": 95,
+        "nextStepsClose": 65,
+        "productKnowledge": 20
+      }
+    }
+  ]
 }
