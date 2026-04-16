@@ -1,3 +1,6 @@
+const fs   = require('fs');
+const path = require('path');
+
 const { fetchYesterdaysCalls, addCallsToLibrary } = require('./gong');
 const { scoreCall }                               = require('./scorer');
 const { sendDailyReport }                         = require('./reporter');
@@ -5,9 +8,25 @@ const { saveToday, getWoWTrends }                 = require('./history');
 
 const LIBRARY_THRESHOLD = 80;
 
+// Guard against duplicate runs — GitHub Actions scheduler can fire twice
+function alreadyRanToday() {
+  const historyFile = path.join(__dirname, 'history', 'scores.json');
+  if (!fs.existsSync(historyFile)) return false;
+  const history = JSON.parse(fs.readFileSync(historyFile, 'utf8'));
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const key = yesterday.toISOString().split('T')[0];
+  return !!history[key];
+}
+
 async function main() {
   console.log('🎯 Sales Coach Agent starting...');
   console.log(`Date: ${new Date().toLocaleDateString()}\n`);
+
+  if (alreadyRanToday()) {
+    console.log('Already ran for yesterday — exiting to prevent duplicate reports.');
+    return;
+  }
 
   const calls = await fetchYesterdaysCalls();
   console.log(`Found ${calls.length} call(s) to review`);
