@@ -1,6 +1,3 @@
-// reporter.js — Slack reporter using Bot Token (supports threading)
-// Requires: SLACK_BOT_TOKEN (xoxb-...) and SLACK_CHANNEL (#channel-name or channel ID)
-
 const SCORE_LABELS = {
   discovery:         'Discovery & Needs',
   rapport:           'Rapport',
@@ -16,16 +13,23 @@ async function sendDailyReport(scoredCalls, wowTrends = []) {
   if (!token)   throw new Error('SLACK_BOT_TOKEN env var is not set.');
   if (!channel) throw new Error('SLACK_CHANNEL env var is not set.');
 
+  // Drop any calls where scoring failed (undefined overall)
+  const validCalls = scoredCalls.filter(c => c.feedback && c.feedback.overall !== undefined);
+  if (validCalls.length === 0) {
+    console.log('No valid scored calls to report.');
+    return;
+  }
+
   const date = new Date().toLocaleDateString('en-US', {
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
   });
 
-  // 1. Post summary message and capture ts for threading
-  const summaryBlocks = buildSummaryBlocks(scoredCalls, wowTrends, date);
-  const summaryRes    = await slackPost(token, {
+  // 1. Post summary with rep-grouped leaderboard
+  const summaryBlocks = buildSummaryBlocks(validCalls, wowTrends, date);
+  const summaryRes = await slackPost(token, {
     channel,
     blocks: summaryBlocks,
-    text:   `🎯 Daily Sales Coach Report — ${date}`,
+    text: `🎯 Daily Sales Coach Report — ${date}`,
   });
 
   if (!summaryRes.ok) {
@@ -35,8 +39,8 @@ async function sendDailyReport(scoredCalls, wowTrends = []) {
   const threadTs = summaryRes.ts;
   console.log(`Slack summary posted (ts: ${threadTs})`);
 
-  // 2. Post each scorecard as a thread reply (worst first)
-  const sorted = [...scoredCalls].sort((a, b) => a.feedback.overall - b.feedback.overall);
+  // 2. Post individual scorecards in thread (worst first)
+  const sorted = [...validCalls].sort((a, b) => a.feedback.overall - b.feedback.overall);
   for (const call of sorted) {
     const blocks = buildScorecardBlocks(call);
     await slackPost(token, {
@@ -45,10 +49,10 @@ async function sendDailyReport(scoredCalls, wowTrends = []) {
       blocks,
       text: `${call.rep} — ${call.feedback.verdict} (${call.feedback.overall})`,
     });
-    await sleep(500); // avoid Slack rate limits
+    await sleep(500);
   }
 
-  console.log(`Slack report posted (${scoredCalls.length} scorecards in thread)`);
+  console.log(`Slack report posted (${validCalls.length} scorecards in thread)`);
 }
 
 // ── Slack API ─────────────────────────────────────────────────────────────
@@ -76,6 +80,13 @@ function scoreEmoji(n) {
   return n >= 80 ? '🟢' : n >= 60 ? '🟡' : '🔴';
 }
 
+function verdictFromScore(n) {
+  if (n >= 80) return 'Strong';
+  if (n >= 60) return 'Solid';
+  if (n >= 40) return 'Needs Work';
+  return 'Struggling';
+}
+
 function deltaText(d) {
   if (d === null || d === undefined) return '—';
   if (d > 0) return `↑ +${d}`;
@@ -88,18 +99,39 @@ function scoreBar(n) {
   return '█'.repeat(filled) + '░'.repeat(10 - filled) + ` ${n}`;
 }
 
+// Group calls by rep and compute aggregate stats
+function groupByRep(calls) {
+  const map = {};
+  for (const call of calls) {
+    if (!map[call.rep]) map[call.rep] = { rep: call.rep, calls: [], addedToLibrary: false };
+    map[call.rep].calls.push(call);
+    if (call.addedToLibrary) map[call.rep].addedToLibrary = true;
+  }
+  return Object.values(map).map(r => {
+    const avg = Math.round(r.calls.reduce((s, c) => s + c.feedback.overall, 0) / r.calls.length);
+    return {
+      rep:            r.rep,
+      callCount:      r.calls.length,
+      avgScore:       avg,
+      verdict:        verdictFromScore(avg),
+      addedToLibrary: r.addedToLibrary,
+    };
+  }).sort((a, b) => b.avgScore - a.avgScore);
+}
+
 // ── Summary message ───────────────────────────────────────────────────────
 function buildSummaryBlocks(calls, wowTrends, date) {
-  const avg = Math.round(calls.reduce((s, c) => s + c.feedback.overall, 0) / calls.length);
+  const totalAvg = Math.round(calls.reduce((s, c) => s + c.feedback.overall, 0) / calls.length);
   const strong   = calls.filter(c => c.feedback.verdict === 'Strong' || c.feedback.verdict === 'Solid').length;
   const needAttn = calls.filter(c => c.feedback.verdict === 'Needs Work' || c.feedback.verdict === 'Struggling').length;
 
-  const leaderboard = [...calls]
-    .sort((a, b) => b.feedback.overall - a.feedback.overall)
-    .map((c, i) => {
-      const medal = ['🥇', '🥈', '🥉'][i] || `${i + 1}.`;
-      return `${medal} *${c.rep}* — ${verdictEmoji(c.feedback.verdict)} ${c.feedback.verdict} · *${c.feedback.overall}*${c.addedToLibrary ? ' 📚' : ''}`;
-    }).join('\n');
+  // Rep-grouped leaderboard
+  const repGroups = groupByRep(calls);
+  const leaderboard = repGroups.map((r, i) => {
+    const medal = ['🥇', '🥈', '🥉'][i] || `${i + 1}.`;
+    const callLabel = `${r.callCount} call${r.callCount !== 1 ? 's' : ''}`;
+    return `${medal} *${r.rep}* — ${verdictEmoji(r.verdict)} ${r.verdict} · *${r.avgScore}* (${callLabel})${r.addedToLibrary ? ' 📚' : ''}`;
+  }).join('\n');
 
   const wowLines = wowTrends.length
     ? wowTrends.map(r =>
@@ -116,7 +148,7 @@ function buildSummaryBlocks(calls, wowTrends, date) {
       type: 'section',
       fields: [
         { type: 'mrkdwn', text: `*Calls reviewed*\n${calls.length}` },
-        { type: 'mrkdwn', text: `*Avg score*\n${scoreEmoji(avg)} ${avg}` },
+        { type: 'mrkdwn', text: `*Team avg score*\n${scoreEmoji(totalAvg)} ${totalAvg}` },
         { type: 'mrkdwn', text: `*Strong / Solid*\n🟢 ${strong}` },
         { type: 'mrkdwn', text: `*Need attention*\n🔴 ${needAttn}` },
       ],
@@ -133,12 +165,12 @@ function buildSummaryBlocks(calls, wowTrends, date) {
     },
     {
       type: 'context',
-      elements: [{ type: 'mrkdwn', text: 'Full scorecards are in the thread below · Powered by Claude' }],
+      elements: [{ type: 'mrkdwn', text: 'Individual call scorecards in the thread below · Powered by Claude' }],
     },
   ];
 }
 
-// ── Scorecard (thread reply) ──────────────────────────────────────────────
+// ── Individual scorecard (thread reply) ──────────────────────────────────
 function buildScorecardBlocks(call) {
   const f        = call.feedback;
   const duration = Math.round((call.duration || 0) / 60);
