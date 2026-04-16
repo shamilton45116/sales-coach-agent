@@ -5,135 +5,60 @@
       "rep": "Joshua Kelonda",
       "callId": "3515668196418868602",
       "title": "Apollo Supply + TOOLBX (Technical Discussion)",
-      "overall": 45,
-      "verdict": "Needs Work",
+      "overall": 67,
+      "verdict": "Solid",
       "scores": {
-        "discovery": 45,
-        "rapport": 65,
-        "objectionHandling": 0,
-        "talkListenRatio": 75,
+        "discovery": 65,
+        "rapport": 72,
+        "objectionHandling": 75,
+        "talkListenRatio": 85,
         "nextStepsClose": 35,
-        "productKnowledge": 55
-      }
-    },
-    {
-      "rep": "Scott Hamilton",
-      "callId": "1911951705685951781",
-      "title": "TOOLBX <> CSG Forge Connect",
-      "overall": 28,
-      "verdict": "Struggling",
-      "scores": {
-        "discovery": 25,
-        "rapport": 45,
-        "objectionHandling": 0,
-        "talkListenRatio": 20,
-        "nextStepsClose": 15,
-        "productKnowledge": 65
+        "productKnowledge": 70
       }
     },
     {
       "rep": "Pouyan Mirsaeidi",
       "callId": "2435536303517636191",
       "title": "Timberline Enterprises LLC + TOOLBX",
-      "overall": 38,
+      "overall": 24,
       "verdict": "Struggling",
       "scores": {
         "discovery": 25,
-        "rapport": 45,
+        "rapport": 40,
         "objectionHandling": 0,
-        "talkListenRatio": 85,
-        "nextStepsClose": 20,
-        "productKnowledge": 55
+        "talkListenRatio": 20,
+        "nextStepsClose": 15,
+        "productKnowledge": 45
       }
     },
     {
       "rep": "Michelle Kubas",
       "callId": "5310087116665238061",
       "title": "TOOLBX & LA Roofing",
-      "overall": 38,
       "verdict": "Struggling",
       "scores": {
         "discovery": 25,
-        "rapport": 45,
-        "objectionHandling": 55,
-        "talkListenRatio": 20,
-        "nextStepsClose": 15,
-        "productKnowledge": 70
-      }
-    },
-    {
-      "rep": "Evan He",
-      "callId": "5127906776661942454",
-      "title": "Rabidou / Toolbx - Moore Infra Setup",
-      "overall": 41,
-      "verdict": "Needs Work",
-      "scores": {
-        "discovery": 15,
-        "rapport": 75,
-        "objectionHandling": 0,
-        "talkListenRatio": 85,
-        "nextStepsClose": 25,
-        "productKnowledge": 45
-      }
-    },
-    {
-      "rep": "Evan He",
-      "callId": "8790432249628043548",
-      "title": "Oxford Ace - Eagle & Machine Access Set Up",
-      "overall": 28,
-      "verdict": "Struggling",
-      "scores": {
-        "discovery": 5,
-        "rapport": 30,
-        "objectionHandling": 0,
-        "talkListenRatio": 85,
-        "nextStepsClose": 25,
-        "productKnowledge": 20
-      }
-    },
-    {
-      "rep": "Christine Hall",
-      "callId": "3672886047130611711",
-      "title": "Tri - County | TOOLBX - Sync",
-      "overall": 52,
-      "verdict": "Needs Work",
-      "scores": {
-        "discovery": 25,
-        "rapport": 75,
+        "rapport": 35,
         "objectionHandling": 45,
-        "talkListenRatio": 85,
-        "nextStepsClose": 15,
-        "productKnowledge": 70
-      }
-    },
-    {
-      "rep": "Omar Sheikh",
-      "callId": "8934934098799997001",
-      "title": "Nations Best / Toolbx - Bank Reporting",
-      "overall": 50,
-      "verdict": "Needs Work",
-      "scores": {
-        "discovery": 25,
-        "rapport": 75,
-        "objectionHandling": 0,
-        "talkListenRatio": 85,
-        "nextStepsClose": 45,
-        "productKnowledge": 70
+        "talkListenRatio": 15,
+        "nextStepsClose": 20,
+        "productKnowledge": 70,
+        "overall": 35
       }
     },
     {
       "rep": "Michelle Kubas",
       "callId": "8008463802854780095",
       "title": "Inbound Call with (662) 312-5459",
-      "overall": 54,
+      "overall": 38,
       "verdict": "Needs Work",
       "scores": {
-        "discovery": 45,
+        "discovery": 25,
         "rapport": 85,
-        "objectionHandling": 0,
-        "talkListenRatio": 95,
+        "objectionHandling": 15,
+        "talkListenRatio": 20,
         "nextStepsClose": 75,
-        "productKnowledge": 25
+        "productKnowledge": 10
       }
     }
   ]
