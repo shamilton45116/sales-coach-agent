@@ -5,13 +5,13 @@
       "rep": "Joshua Kelonda",
       "callId": "3515668196418868602",
       "title": "Apollo Supply + TOOLBX (Technical Discussion)",
-      "overall": 44,
+      "overall": 46,
       "verdict": "Needs Work",
       "scores": {
-        "discovery": 55,
+        "discovery": 45,
         "rapport": 65,
         "objectionHandling": 30,
-        "talkListenRatio": 45,
+        "talkListenRatio": 75,
         "nextStepsClose": 25,
         "productKnowledge": 40
       }
@@ -20,45 +20,45 @@
       "rep": "Pouyan Mirsaeidi",
       "callId": "2435536303517636191",
       "title": "Timberline Enterprises LLC + TOOLBX",
-      "overall": 24,
+      "overall": 29,
       "verdict": "Struggling",
       "scores": {
-        "discovery": 15,
+        "discovery": 25,
         "rapport": 65,
-        "objectionHandling": 0,
-        "talkListenRatio": 35,
+        "objectionHandling": 30,
+        "talkListenRatio": 40,
         "nextStepsClose": 20,
-        "productKnowledge": 10
+        "productKnowledge": 15
       }
     },
     {
       "rep": "Michelle Kubas",
       "callId": "5310087116665238061",
       "title": "TOOLBX & LA Roofing",
-      "overall": 35,
+      "overall": 32,
       "verdict": "Struggling",
       "scores": {
-        "discovery": 25,
+        "discovery": 15,
         "rapport": 45,
-        "objectionHandling": 55,
+        "objectionHandling": 65,
         "talkListenRatio": 20,
         "nextStepsClose": 10,
-        "productKnowledge": 65
+        "productKnowledge": 70
       }
     },
     {
       "rep": "Michelle Kubas",
       "callId": "8008463802854780095",
       "title": "Inbound Call with (662) 312-5459",
-      "overall": 45,
+      "overall": 35,
       "verdict": "Needs Work",
       "scores": {
         "discovery": 25,
         "rapport": 85,
-        "objectionHandling": 20,
-        "talkListenRatio": 85,
+        "objectionHandling": 0,
+        "talkListenRatio": 15,
         "nextStepsClose": 75,
-        "productKnowledge": 15
+        "productKnowledge": 0
       }
     }
   ]
