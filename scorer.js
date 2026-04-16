@@ -41,7 +41,16 @@ ${transcript}
   });
 
   const raw = response.content[0].text.trim().replace(/```json|```/g, '').trim();
-  const feedback = JSON.parse(raw);
+
+  let feedback;
+  try {
+    feedback = JSON.parse(raw);
+  } catch (e) {
+    // Strip control characters that can break JSON and try again
+    const cleaned = raw.replace(/[\x00-\x1F\x7F]/g, ' ');
+    feedback = JSON.parse(cleaned);
+  }
+
   return { ...call, feedback };
 }
 
