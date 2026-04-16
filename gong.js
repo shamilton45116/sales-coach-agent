@@ -1,9 +1,7 @@
-// gong.js — Gong API client
-// Docs: https://us-66211.api.gong.io/v2/api-explorer/
-
 const fetch = require('node-fetch');
 
 const GONG_BASE = 'https://us-43298.api.gong.io';
+const MIN_DURATION_SECS = 600; // 10 minutes
 
 function gongHeaders() {
   const credentials = Buffer.from(
@@ -15,7 +13,6 @@ function gongHeaders() {
   };
 }
 
-// Returns calls from yesterday (midnight → midnight local time)
 async function fetchYesterdaysCalls() {
   const now = new Date();
 
@@ -26,83 +23,98 @@ async function fetchYesterdaysCalls() {
   yesterdayMidnight.setDate(yesterdayMidnight.getDate() - 1);
 
   const fromDateTime = yesterdayMidnight.toISOString();
-  const toDateTime = todayMidnight.toISOString();
+  const toDateTime   = todayMidnight.toISOString();
 
   console.log(`Fetching Gong calls: ${fromDateTime} → ${toDateTime}`);
 
-  const res = await fetch(
+  // Step 1: Get list of calls in date range
+  const listRes = await fetch(
     `${GONG_BASE}/v2/calls?fromDateTime=${fromDateTime}&toDateTime=${toDateTime}`,
     { headers: gongHeaders() }
   );
 
-  if (!res.ok) {
-    throw new Error(`Gong calls fetch failed: ${res.status} ${await res.text()}`);
+  if (!listRes.ok) {
+    throw new Error(`Gong calls fetch failed: ${listRes.status} ${await listRes.text()}`);
   }
 
-  const data = await res.json();
-  const calls = data.calls || [];
+  const listData = await listRes.json();
+  const allCalls = listData.calls || [];
+  console.log(`  Total calls found: ${allCalls.length}`);
 
-  if (calls.length === 0) return [];
+  // Step 2: Filter by duration
+  const longCalls = allCalls.filter(c => (c.duration || 0) >= MIN_DURATION_SECS);
+  console.log(`  After 10-min filter: ${longCalls.length}`);
 
-  // Fetch transcripts in parallel (batched to avoid rate limits)
-  const enriched = await Promise.all(
-    calls.map(async (call) => {
-      const transcript = await fetchTranscript(call.id);
-      const rep = identifyRep(call);
-      return {
-        id: call.id,
-        title: call.title || 'Untitled call',
-        rep,
-        duration: call.duration || 0,
-        started: call.started,
-        transcript,
-      };
-    })
-  );
+  if (longCalls.length === 0) return [];
 
-  // Skip calls where we couldn't get a transcript
-  return enriched.filter((c) => c.transcript && c.transcript.length > 100);
-}
-
-async function fetchTranscript(callId) {
-  const res = await fetch(`${GONG_BASE}/v2/calls/transcript`, {
+  // Step 3: Fetch detailed call data (includes parties/speakers)
+  const detailRes = await fetch(`${GONG_BASE}/v2/calls/extensive`, {
     method: 'POST',
     headers: gongHeaders(),
-    body: JSON.stringify({ filter: { callIds: [callId] } }),
+    body: JSON.stringify({
+      filter: { callIds: longCalls.map(c => c.id) },
+      contentSelector: {
+        exposedFields: {
+          parties: true,
+          content: { pointsOfInterest: false, brief: false, outline: false, highlights: false },
+        },
+      },
+    }),
   });
 
-  if (!res.ok) {
-    console.warn(`  Transcript fetch failed for ${callId}: ${res.status}`);
-    return null;
+  const detailData = detailRes.ok ? await detailRes.json() : { calls: [] };
+  const detailMap  = {};
+  for (const c of detailData.calls || []) {
+    detailMap[c.metaData?.id] = c;
   }
 
-  const data = await res.json();
-  const transcriptData = data.callTranscripts?.[0];
-  if (!transcriptData) return null;
+  // Step 4: Fetch transcripts
+  const transcriptRes = await fetch(`${GONG_BASE}/v2/calls/transcript`, {
+    method: 'POST',
+    headers: gongHeaders(),
+    body: JSON.stringify({ filter: { callIds: longCalls.map(c => c.id) } }),
+  });
 
-  // Format into readable text: "SpeakerName: sentence sentence..."
-  return transcriptData.transcript
-    .map((segment) => {
-      const text = segment.sentences.map((s) => s.text).join(' ');
-      return `${segment.speakerName}: ${text}`;
-    })
-    .join('\n');
+  const transcriptData = transcriptRes.ok ? await transcriptRes.json() : { callTranscripts: [] };
+  const transcriptMap  = {};
+  for (const t of transcriptData.callTranscripts || []) {
+    transcriptMap[t.callId] = t.transcript
+      .map(seg => `${seg.speakerName}: ${seg.sentences.map(s => s.text).join(' ')}`)
+      .join('\n');
+  }
+
+  // Step 5: Build enriched call objects
+  const enriched = longCalls
+    .filter(c => transcriptMap[c.id] && transcriptMap[c.id].length > 100)
+    .map(c => {
+      const detail   = detailMap[c.id];
+      const parties  = detail?.parties || [];
+      const internal = parties.find(p =>
+        (p.affiliation === 'Internal' || p.methods?.some(m => m.affiliation === 'Internal')) && p.name
+      );
+      const rep = internal?.name || extractRepFromTitle(c.title) || 'Unknown Rep';
+
+      return {
+        id:         c.id,
+        title:      c.title || 'Untitled call',
+        rep,
+        duration:   c.duration || 0,
+        started:    c.started,
+        transcript: transcriptMap[c.id],
+      };
+    });
+
+  console.log(`  With transcripts: ${enriched.length}`);
+  return enriched;
 }
 
-function identifyRep(call) {
-  // Gong marks internal parties — find the first internal speaker
-  const internal = call.parties?.find(
-    (p) => p.affiliation === 'Internal' && p.name
-  );
-  return internal?.name || 'Unknown Rep';
+// Fallback: try to pull rep name from call title (e.g. "Mohler | TOOLBX - Sync")
+function extractRepFromTitle(title) {
+  if (!title) return null;
+  const match = title.match(/^([A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\s*[|&-]/);
+  return match ? match[1].trim() : null;
 }
 
-module.exports = { fetchYesterdaysCalls };
-
-// ── Gong Library ──────────────────────────────────────────────────────────
-// Adds qualifying calls to the Gong call library.
-// Gong API: PUT /v2/library/calls
-// Docs: https://us-66211.api.gong.io/v2/api-explorer/#/Library
 async function addCallsToLibrary(callIds) {
   if (!callIds || callIds.length === 0) return;
 
@@ -113,9 +125,7 @@ async function addCallsToLibrary(callIds) {
   });
 
   if (!res.ok) {
-    const text = await res.text();
-    // Non-fatal — log and continue so the rest of the report still sends
-    console.warn(`  Gong library tagging failed: ${res.status} ${text}`);
+    console.warn(`  Gong library tagging failed: ${res.status} ${await res.text()}`);
     return false;
   }
 
