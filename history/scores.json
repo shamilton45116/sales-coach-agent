@@ -61,5 +61,37 @@
         "productKnowledge": 0
       }
     }
+  ],
+  "2026-04-17": [
+    {
+      "rep": "Michelle Kubas",
+      "callId": "8408387568005695358",
+      "title": "TOOLBX | New Home Building Stores",
+      "overall": 40,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 35,
+        "rapport": 70,
+        "objectionHandling": 20,
+        "talkListenRatio": 25,
+        "nextStepsClose": 15,
+        "productKnowledge": 75
+      }
+    },
+    {
+      "rep": "Michelle Kubas",
+      "callId": "1636135697995910688",
+      "title": "TOOLBX | Scherer Bros",
+      "overall": 51,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 45,
+        "rapport": 75,
+        "objectionHandling": 0,
+        "talkListenRatio": 85,
+        "nextStepsClose": 40,
+        "productKnowledge": 60
+      }
+    }
   ]
 }
