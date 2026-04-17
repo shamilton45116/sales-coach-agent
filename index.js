@@ -7,16 +7,19 @@ const { sendDailyReport }                         = require('./reporter');
 const { saveToday, getWoWTrends }                 = require('./history');
 
 const LIBRARY_THRESHOLD = 80;
+const RUN_LOCK_FILE     = path.join(__dirname, 'history', 'last-run.json');
 
-// Guard against duplicate runs — GitHub Actions scheduler can fire twice
+// Guard against duplicate runs — tracks the date the agent last ran
 function alreadyRanToday() {
-  const historyFile = path.join(__dirname, 'history', 'scores.json');
-  if (!fs.existsSync(historyFile)) return false;
-  const history = JSON.parse(fs.readFileSync(historyFile, 'utf8'));
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const key = yesterday.toISOString().split('T')[0];
-  return !!history[key];
+  if (!fs.existsSync(RUN_LOCK_FILE)) return false;
+  const { lastRun } = JSON.parse(fs.readFileSync(RUN_LOCK_FILE, 'utf8'));
+  const today = new Date().toISOString().split('T')[0];
+  return lastRun === today;
+}
+
+function markRanToday() {
+  const today = new Date().toISOString().split('T')[0];
+  fs.writeFileSync(RUN_LOCK_FILE, JSON.stringify({ lastRun: today }));
 }
 
 async function main() {
@@ -24,9 +27,12 @@ async function main() {
   console.log(`Date: ${new Date().toLocaleDateString()}\n`);
 
   if (alreadyRanToday()) {
-    console.log('Already ran for yesterday — exiting to prevent duplicate reports.');
+    console.log('Already ran today — exiting to prevent duplicate reports.');
     return;
   }
+
+  // Mark as ran immediately so any parallel run exits
+  markRanToday();
 
   const calls = await fetchYesterdaysCalls();
   console.log(`Found ${calls.length} call(s) to review`);
