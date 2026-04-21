@@ -93,5 +93,22 @@
         "productKnowledge": 60
       }
     }
+  ],
+  "2026-04-21": [
+    {
+      "rep": "Graham Staley",
+      "callId": "5853644810850856709",
+      "title": "Kilrich + TOOLBX",
+      "overall": 35,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 45,
+        "rapport": 55,
+        "objectionHandling": 20,
+        "talkListenRatio": 25,
+        "nextStepsClose": 0,
+        "productKnowledge": 60
+      }
+    }
   ]
 }
