@@ -110,5 +110,22 @@
         "productKnowledge": 60
       }
     }
+  ],
+  "2026-04-22": [
+    {
+      "rep": "Joshua Kelonda",
+      "callId": "180123339927575102",
+      "title": "MRD + TOOLBX (Onboarding Kick Off)",
+      "overall": 74,
+      "verdict": "Solid",
+      "scores": {
+        "discovery": 75,
+        "rapport": 85,
+        "objectionHandling": 0,
+        "talkListenRatio": 85,
+        "nextStepsClose": 45,
+        "productKnowledge": 80
+      }
+    }
   ]
 }
