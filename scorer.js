@@ -20,7 +20,7 @@ WHO THE CUSTOMERS ARE:
 - The decision-making process varies widely from dealer to dealer — some owners decide alone, others involve their team or buying group
 
 CALL TYPES BEING REVIEWED:
-Reps handle discovery calls, demo calls, pricing calls, and contract review calls prior to signature. Score the call in context of what type of call it appears to be.
+Reps handle discovery calls, demo calls, pricing calls, contract review calls prior to signature, AND onboarding/implementation calls after the deal is closed. Score the call in context of what type of call it appears to be. For onboarding and post-sale calls, discovery and objection handling are typically N/A — focus instead on rapport, listen ratio, next steps, and product knowledge.
 
 ---
 
@@ -36,7 +36,10 @@ For TOOLBX, strong discovery means uncovering the following (not all will apply 
 - Are they happy with their current ERP?
 - What buying group are they a member of? (Affects pricing and relationship)
 - Who is the actual decision maker and what does their buying process look like?
-0-39: Rep pitched without asking meaningful questions; critical info like ERP or pain points unknown
+
+**SPECIAL CASE:** If this is an onboarding, implementation, or post-sale call, score N/A (return null for discovery score) — discovery is not the goal of these calls.
+
+0-39: Rep pitched without asking meaningful questions OR dominated talk time (under 30% listen ratio) and clearly didn't create space for discovery; critical info like ERP or pain points unknown
 40-59: Some discovery done but surface level; key TOOLBX-specific questions missed
 60-79: Good discovery; most critical info gathered; ERP, pain points, and priorities understood
 80-100: Deep discovery; full picture including DM process, buying group, ERP satisfaction, business priorities, and technology adoption — all uncovered before pitching
@@ -54,6 +57,9 @@ Common TOOLBX objections and what good looks like:
 - "Your fees are too high" → Rep should understand their current costs (manual labour, errors, lost orders), reframe ROI, and avoid discounting immediately
 - "My team won't use it" → Rep should ask what happened with past tech rollouts, discuss change management, reference similar dealers
 - "My ERP already has a solution" → Rep should ask how well it's actually being used by contractors, probe on gaps, differentiate on contractor-facing experience
+
+**SPECIAL CASE:** If this is an onboarding, implementation, or post-sale call, score N/A (return null for objectionHandling score) — objections are rare in post-sale contexts.
+
 0-39: Caved immediately, got defensive, or ignored the objection
 40-59: Acknowledged but gave a generic response; didn't probe the root concern
 60-79: Explored the real concern, gave a relevant and specific response
@@ -67,10 +73,10 @@ A rep who dominated a 45-minute call should score below 30
 
 DIMENSION 5 — NEXT STEPS & CLOSE (0-100)
 Every TOOLBX call should end with a specific, agreed next step — not "I'll follow up."
-0-39: Call ended vaguely; no clear next step or timeline
-40-59: Agreed to reconnect but no date, no agenda
-60-79: Next meeting booked but agenda was vague or one-sided
-80-100: Specific next step confirmed on the call — date, time, clear agenda, and mutual commitment from the prospect
+0-39: Call ended vaguely; no clear next step or timeline, OR next step was mentioned but not mutually confirmed by the prospect
+40-59: Agreed to reconnect but no calendar invite sent, no confirmed date/time, or agenda was missing
+60-79: Next meeting booked with date/time but agenda was vague or one-sided, OR rep suggested a date but prospect didn't explicitly confirm
+80-100: Specific next step confirmed on the call — date, time, clear agenda, and mutual commitment from the prospect; ideally calendar invite sent or commitment to send stated
 
 DIMENSION 6 — PRODUCT KNOWLEDGE (0-100)
 0-39: Couldn't answer basic questions about integration, ERP compatibility, or pricing; had to "check and get back"
@@ -79,7 +85,10 @@ DIMENSION 6 — PRODUCT KNOWLEDGE (0-100)
 80-100: Expert fluency; spoke confidently about ERP integrations, AI Order Automation, onboarding, adoption data, and competitive differentiation — all tied to this dealer's specific context
 
 VERDICT thresholds: Strong (80-100), Solid (60-79), Needs Work (40-59), Struggling (0-39)
-Overall score: weighted average — weight Discovery and Objection Handling most heavily as these are the biggest drivers of deal success for TOOLBX.
+
+**Overall score calculation:**
+- If this is a PRE-SALE call (discovery, demo, pricing, contract review): weighted average — weight Discovery 25%, Objection Handling 25%, Next Steps 20%, Talk/Listen 15%, Rapport 10%, Product Knowledge 5%
+- If this is a POST-SALE call (onboarding, implementation, check-in): exclude discovery and objection handling from the calculation entirely. Weight Next Steps 35%, Talk/Listen 30%, Rapport 20%, Product Knowledge 15%
 
 FEEDBACK RULES:
 - strengths and coachingNotes: 0-5 items each
@@ -99,6 +108,8 @@ Duration: ${Math.round((call.duration || 0) / 60)} minutes
 Date: ${new Date(call.started).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
 
 IMPORTANT: Every strength and coaching note must reference a specific quote or moment from this transcript. All feedback must be specific to TOOLBX and this dealer's situation — no generic sales advice.
+
+If this is an onboarding, implementation, or post-sale call, return null for discovery and objectionHandling scores.
 
 --- TRANSCRIPT ---
 ${transcript}
