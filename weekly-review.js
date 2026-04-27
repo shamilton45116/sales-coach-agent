@@ -46,12 +46,25 @@ function loadScorer() {
   return fs.readFileSync(SCORER_PATH, 'utf8');
 }
 
+// scores.json shape (saved by history.js):
+// { "2026-04-23": [ {rep, callId, overall, coachingNotes, ...}, ... ], "2026-04-24": [...] }
 function filterThisWeek(scores) {
-  const cutoff = Date.now() - 7 * 24 * 60 * 60 * 1000;
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+
+  const cutoff = new Date(today);
+  cutoff.setDate(cutoff.getDate() - 7);
+  cutoff.setHours(0, 0, 0, 0);
+
   const recent = [];
-  for (const [callId, entry] of Object.entries(scores)) {
-    const ts = entry?.scoredAt ? new Date(entry.scoredAt).getTime() : 0;
-    if (ts >= cutoff) recent.push({ callId, ...entry });
+  for (const [dateStr, calls] of Object.entries(scores)) {
+    const d = new Date(dateStr);
+    if (isNaN(d)) continue;
+    if (d < cutoff || d > today) continue;
+    if (!Array.isArray(calls)) continue;
+    for (const call of calls) {
+      recent.push({ date: dateStr, ...call });
+    }
   }
   return recent;
 }
@@ -98,10 +111,10 @@ async function main() {
 
 You will receive:
 1. The current scorer.js file (the rubric in code)
-2. This week's scored calls with their scores and coaching notes
+2. This week's scored calls — each entry has: rep, callId, title, overall (0-100 score), verdict, scores (per-dimension breakdown), callSummary, coachingNotes (array), strengths (array), priorityAction
 
 Your job:
-- Identify the 3-5 most common patterns across the coaching notes (recurring weaknesses, missed opportunities, or scoring blind spots)
+- Identify the 3-5 most common patterns across the coachingNotes and per-dimension scores (recurring weaknesses, missed opportunities, or scoring blind spots)
 - Rewrite scorer.js to reflect what you learned (tighten criteria, add new checks, adjust weights)
 - Keep the same exported function signatures so the rest of the app keeps working
 - Preserve all existing exports and CommonJS module.exports structure
