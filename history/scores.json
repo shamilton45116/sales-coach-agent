@@ -127,5 +127,35 @@
         "productKnowledge": 80
       }
     }
+  ],
+  "2026-04-29": [
+    {
+      "callId": "2710800475688066679",
+      "title": "Call with NC Hunt Inc. - Dzmitry  Yushkouski",
+      "overall": 62,
+      "verdict": "Solid",
+      "scores": {
+        "discovery": 65,
+        "rapport": 72,
+        "objectionHandling": null,
+        "talkListenRatio": 68,
+        "nextStepsClose": 45,
+        "productKnowledge": 58
+      }
+    },
+    {
+      "callId": "8193648096568394735",
+      "title": "TOOLBX | Tague Lumber",
+      "overall": 74,
+      "verdict": "Solid",
+      "scores": {
+        "discovery": 85,
+        "rapport": 75,
+        "objectionHandling": null,
+        "talkListenRatio": 85,
+        "nextStepsClose": 40,
+        "productKnowledge": 80
+      }
+    }
   ]
 }
