@@ -157,5 +157,91 @@
         "productKnowledge": 80
       }
     }
+  ],
+  "2026-04-30": [
+    {
+      "callId": "1957476035155982141",
+      "title": "Toolbx <> SDC Building Center",
+      "overall": null,
+      "verdict": "Unable to Score",
+      "scores": {
+        "discovery": null,
+        "rapport": null,
+        "objectionHandling": null,
+        "talkListenRatio": null,
+        "nextStepsClose": null,
+        "productKnowledge": null
+      }
+    },
+    {
+      "callId": "2910900556932482415",
+      "title": "TOOLBX | L A Roofing",
+      "overall": 69,
+      "verdict": "Solid",
+      "scores": {
+        "discovery": null,
+        "rapport": 85,
+        "objectionHandling": null,
+        "talkListenRatio": 75,
+        "nextStepsClose": 45,
+        "productKnowledge": 70
+      }
+    },
+    {
+      "callId": "4885732247980121501",
+      "title": "TOOLBX Proposal | Service Lumber",
+      "overall": 50,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": null,
+        "rapport": 65,
+        "objectionHandling": null,
+        "talkListenRatio": 25,
+        "nextStepsClose": 40,
+        "productKnowledge": 70
+      }
+    },
+    {
+      "callId": "5943818744923136205",
+      "title": "Smith Phillips Building Supply / TOOLBX Meeting",
+      "overall": 60,
+      "verdict": "Solid",
+      "scores": {
+        "discovery": null,
+        "rapport": 85,
+        "objectionHandling": null,
+        "talkListenRatio": 60,
+        "nextStepsClose": 20,
+        "productKnowledge": 75
+      }
+    },
+    {
+      "callId": "8022579337903332772",
+      "title": "East Mississippi + TOOLBX",
+      "overall": 53,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": null,
+        "rapport": 75,
+        "objectionHandling": null,
+        "talkListenRatio": 25,
+        "nextStepsClose": 40,
+        "productKnowledge": 70
+      }
+    },
+    {
+      "callId": "3188051292793705938",
+      "title": "Call with East Mississippi Lumber Co - Toby Steed",
+      "overall": 45,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": null,
+        "rapport": 75,
+        "objectionHandling": null,
+        "talkListenRatio": 20,
+        "nextStepsClose": 15,
+        "productKnowledge": 70
+      }
+    }
   ]
 }
