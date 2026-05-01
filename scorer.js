@@ -66,17 +66,33 @@ Common TOOLBX objections and what good looks like:
 80-100: Turned the objection into a productive conversation; used data, dealer references, or ROI framing confidently
 
 DIMENSION 4 — TALK / LISTEN RATIO (0-100)
-These customers need to feel heard — especially owners who are used to being in charge.
+These customers need to feel heard — especially owners who are used to being in charge. Reps who monologue kill deals.
+
 100 = rep spoke less than 30% of the time
-Penalise hard for: monologues, feature dumping, not pausing after questions, talking over the prospect
-A rep who dominated a 45-minute call should score below 30
+80-99 = rep spoke 30-40% of the time; asked questions and paused to let prospect think
+60-79 = rep spoke 40-50% of the time; some back-and-forth but rep could have listened more
+40-59 = rep spoke 50-65% of the time; more talking than listening
+20-39 = rep spoke 65-80% of the time; clear monologuing, prospect had little space to engage
+0-19 = rep spoke over 80% of the time; feature dumping, no dialogue, prospect barely participated
+
+Penalise hard for: monologues over 2 minutes without a question, feature dumping, not pausing after questions, talking over the prospect. A rep who dominated a call with long explanations should score below 30 even if they asked a few questions.
 
 DIMENSION 5 — NEXT STEPS & CLOSE (0-100)
-Every TOOLBX call should end with a specific, agreed next step — not "I'll follow up."
-0-39: Call ended vaguely; no clear next step or timeline, OR next step was mentioned but not mutually confirmed by the prospect
-40-59: Agreed to reconnect but no calendar invite sent, no confirmed date/time, or agenda was missing
-60-79: Next meeting booked with date/time but agenda was vague or one-sided, OR rep suggested a date but prospect didn't explicitly confirm
-80-100: Specific next step confirmed on the call — date, time, clear agenda, and mutual commitment from the prospect; ideally calendar invite sent or commitment to send stated
+Every TOOLBX call should end with a specific, mutually agreed next step — not "I'll follow up" or "I'll send you something."
+
+**SCORING REQUIREMENTS:**
+- To score 60+, the prospect must explicitly confirm the next step (verbally agree to a date, say "yes that works," or confirm receipt of a calendar invite on the call)
+- To score 80+, the next step must include: confirmed date/time, clear agenda, and explicit prospect buy-in during the call
+- If the rep suggests a next step but the prospect does not confirm it, cap score at 50
+- If the call ends with "I'll send you something" or "Let's reconnect soon" with no specifics, score 30 or below
+- If there is no next step mentioned at all, score 0-20
+
+0-20: No next step mentioned, or call ended abruptly without any follow-up plan
+21-39: Vague next step mentioned ("I'll follow up," "I'll send info") but no date, time, or commitment
+40-50: Rep proposed a next step with some specifics, but prospect did not confirm or agree on the call
+51-65: Prospect verbally agreed to a next step, but details were vague or agenda unclear
+66-79: Next step confirmed with date/time, but agenda was one-sided or prospect's confirmation was lukewarm
+80-100: Specific next step locked in — date, time, agenda clearly stated, and prospect gave explicit verbal confirmation or commitment (e.g., "Yes, let's do Tuesday at 2" or "That works, send the invite")
 
 DIMENSION 6 — PRODUCT KNOWLEDGE (0-100)
 0-39: Couldn't answer basic questions about integration, ERP compatibility, or pricing; had to "check and get back"
@@ -87,14 +103,16 @@ DIMENSION 6 — PRODUCT KNOWLEDGE (0-100)
 VERDICT thresholds: Strong (80-100), Solid (60-79), Needs Work (40-59), Struggling (0-39)
 
 **Overall score calculation:**
-- If this is a PRE-SALE call (discovery, demo, pricing, contract review): weighted average — weight Discovery 25%, Objection Handling 25%, Next Steps 20%, Talk/Listen 15%, Rapport 10%, Product Knowledge 5%
-- If this is a POST-SALE call (onboarding, implementation, check-in): exclude discovery and objection handling from the calculation entirely. Weight Next Steps 35%, Talk/Listen 30%, Rapport 20%, Product Knowledge 15%
+- If this is a PRE-SALE call (discovery, demo, pricing, contract review): weighted average — weight Discovery 20%, Objection Handling 20%, Next Steps 25%, Talk/Listen 20%, Rapport 10%, Product Knowledge 5%
+- If this is a POST-SALE call (onboarding, implementation, check-in): exclude discovery and objection handling from the calculation entirely. Weight Next Steps 40%, Talk/Listen 30%, Rapport 15%, Product Knowledge 15%
 
 FEEDBACK RULES:
 - strengths and coachingNotes: 0-5 items each
 - Only include what is clearly evidenced in the transcript — do NOT pad
 - Every item must cite a specific quote or moment from the transcript
 - Coaching notes should be specific to TOOLBX context where possible (e.g. "Rep missed asking about ERP" not just "Rep missed discovery questions")
+- If Talk/Listen ratio is below 40, include a coaching note about monologuing with a specific example of where the rep talked too long without engaging the prospect
+- If Next Steps score is below 60, include a coaching note about failing to secure explicit prospect confirmation
 
 Return ONLY valid JSON, no markdown, no preamble:
 {"scores":{"discovery":0,"rapport":0,"objectionHandling":0,"talkListenRatio":0,"nextStepsClose":0,"productKnowledge":0},"overall":0,"verdict":"Solid","callSummary":"2-3 sentences: what type of call this was, what happened, and where the deal stands","strengths":[{"point":"what they did well","evidence":"exact quote or moment from transcript"}],"coachingNotes":[{"note":"what to improve — specific to TOOLBX context","callMoment":"exact quote or moment from transcript"}],"priorityAction":"the single most important thing this rep must do differently — one sentence, TOOLBX-specific","momentOfTruth":"the one quote from the transcript that best captures how the call went","nextCallTip":"one tactical thing they can do or say on their very next TOOLBX call"}`;
@@ -110,6 +128,10 @@ Date: ${new Date(call.started).toLocaleDateString('en-US', { weekday: 'short', m
 IMPORTANT: Every strength and coaching note must reference a specific quote or moment from this transcript. All feedback must be specific to TOOLBX and this dealer's situation — no generic sales advice.
 
 If this is an onboarding, implementation, or post-sale call, return null for discovery and objectionHandling scores.
+
+Pay close attention to:
+1. Whether the rep is monologuing or creating space for dialogue — score Talk/Listen harshly if the rep dominates
+2. Whether the prospect explicitly confirmed the next step — if not, Next Steps score must be 50 or below
 
 --- TRANSCRIPT ---
 ${transcript}
