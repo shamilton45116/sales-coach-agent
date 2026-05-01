@@ -243,5 +243,49 @@
         "productKnowledge": 70
       }
     }
+  ],
+  "2026-05-01": [
+    {
+      "callId": "754431080479625983",
+      "title": "Toolbx <> Peterman Lumber",
+      "overall": 62,
+      "verdict": "Solid",
+      "scores": {
+        "discovery": 85,
+        "rapport": 75,
+        "objectionHandling": null,
+        "talkListenRatio": 85,
+        "nextStepsClose": 20,
+        "productKnowledge": 45
+      }
+    },
+    {
+      "callId": "7315646632445622051",
+      "title": "G.W. Smith Lumber + TOOLBX",
+      "overall": 55,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": 45,
+        "rapport": 75,
+        "objectionHandling": null,
+        "talkListenRatio": 65,
+        "nextStepsClose": 20,
+        "productKnowledge": 70
+      }
+    },
+    {
+      "callId": "2845101172047947659",
+      "title": "TOOLBX + RFMS Integration Sync",
+      "overall": 70,
+      "verdict": "Solid",
+      "scores": {
+        "discovery": null,
+        "rapport": 85,
+        "objectionHandling": null,
+        "talkListenRatio": 75,
+        "nextStepsClose": 40,
+        "productKnowledge": 80
+      }
+    }
   ]
 }
