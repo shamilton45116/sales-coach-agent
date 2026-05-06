@@ -287,5 +287,21 @@
         "productKnowledge": 80
       }
     }
+  ],
+  "2026-05-06": [
+    {
+      "callId": "3325730832439218580",
+      "title": "Toolbx <> SDC Building Center",
+      "overall": 26,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": null,
+        "rapport": 58,
+        "objectionHandling": null,
+        "talkListenRatio": 22,
+        "nextStepsClose": 15,
+        "productKnowledge": 55
+      }
+    }
   ]
 }
