@@ -303,5 +303,21 @@
         "productKnowledge": 55
       }
     }
+  ],
+  "2026-05-07": [
+    {
+      "callId": "3365413449185734281",
+      "title": "Williams Lumber + TOOLBX",
+      "overall": 26,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 35,
+        "rapport": 55,
+        "objectionHandling": null,
+        "talkListenRatio": 22,
+        "nextStepsClose": 0,
+        "productKnowledge": 62
+      }
+    }
   ]
 }
