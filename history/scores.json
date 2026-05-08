@@ -319,5 +319,35 @@
         "productKnowledge": 62
       }
     }
+  ],
+  "2026-05-08": [
+    {
+      "callId": "5256701595817812547",
+      "title": "Stockham Lumber <> Toolbx",
+      "overall": 20,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 22,
+        "rapport": 52,
+        "objectionHandling": null,
+        "talkListenRatio": 18,
+        "nextStepsClose": 0,
+        "productKnowledge": 55
+      }
+    },
+    {
+      "callId": "388160450691297841",
+      "title": "TOOLBX | Social Circle Ace",
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 20,
+        "rapport": 35,
+        "objectionHandling": null,
+        "talkListenRatio": 60,
+        "nextStepsClose": 25,
+        "productKnowledge": 20,
+        "overall": 30
+      }
+    }
   ]
 }
