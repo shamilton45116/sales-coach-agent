@@ -349,5 +349,35 @@
         "overall": 30
       }
     }
+  ],
+  "2026-05-12": [
+    {
+      "callId": "5449956310900464410",
+      "title": "TOOLBX AR Analysis | Kellogg (tentative)",
+      "overall": 30,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 20,
+        "rapport": 52,
+        "objectionHandling": 38,
+        "talkListenRatio": 18,
+        "nextStepsClose": 8,
+        "productKnowledge": 62
+      }
+    },
+    {
+      "callId": "8577334859957524163",
+      "title": "TOOLBX | Social Circle Ace",
+      "overall": 38,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 28,
+        "rapport": 58,
+        "objectionHandling": null,
+        "talkListenRatio": 52,
+        "nextStepsClose": 5,
+        "productKnowledge": 50
+      }
+    }
   ]
 }
