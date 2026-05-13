@@ -379,5 +379,35 @@
         "productKnowledge": 50
       }
     }
+  ],
+  "2026-05-13": [
+    {
+      "callId": "6657195728157480136",
+      "title": "Call with Ben's Contractor Center - Rachel Zyrowski",
+      "overall": 46,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": null,
+        "rapport": 72,
+        "objectionHandling": null,
+        "talkListenRatio": 62,
+        "nextStepsClose": 28,
+        "productKnowledge": 63
+      }
+    },
+    {
+      "callId": "3408316070152057",
+      "title": "TOOLBX | Scherer Bros",
+      "overall": 38,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 45,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 55,
+        "nextStepsClose": 5,
+        "productKnowledge": 52
+      }
+    }
   ]
 }
