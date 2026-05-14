@@ -409,5 +409,49 @@
         "productKnowledge": 52
       }
     }
+  ],
+  "2026-05-14": [
+    {
+      "callId": "7451376694990842958",
+      "title": "Book A Demo Call",
+      "overall": 38,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 35,
+        "rapport": 72,
+        "objectionHandling": null,
+        "talkListenRatio": 38,
+        "nextStepsClose": 0,
+        "productKnowledge": 52
+      }
+    },
+    {
+      "callId": "3492009547373324032",
+      "title": "TOOLBX Proposal | Massa",
+      "overall": 32,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 28,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 55,
+        "nextStepsClose": 5,
+        "productKnowledge": 45
+      }
+    },
+    {
+      "callId": "844989615654969287",
+      "title": "TOOLBX Live Demo",
+      "overall": 28,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 0,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 18,
+        "nextStepsClose": 5,
+        "productKnowledge": 58
+      }
+    }
   ]
 }
