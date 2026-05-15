@@ -453,5 +453,49 @@
         "productKnowledge": 58
       }
     }
+  ],
+  "2026-05-15": [
+    {
+      "callId": "5654537403246923535",
+      "title": "Western Ohio True Value + TOOLBX",
+      "overall": 36,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 52,
+        "rapport": 78,
+        "objectionHandling": null,
+        "talkListenRatio": 62,
+        "nextStepsClose": 5,
+        "productKnowledge": null
+      }
+    },
+    {
+      "callId": "3400628704240195554",
+      "title": "TOOLBX | Kansas City Lumber",
+      "overall": 38,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 42,
+        "rapport": 65,
+        "objectionHandling": null,
+        "talkListenRatio": 38,
+        "nextStepsClose": 5,
+        "productKnowledge": 62
+      }
+    },
+    {
+      "callId": "1465785668916956784",
+      "title": "Andrea Lara and Michelle Kubas",
+      "overall": 35,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 25,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 18,
+        "nextStepsClose": 10,
+        "productKnowledge": 58
+      }
+    }
   ]
 }
