@@ -497,5 +497,21 @@
         "productKnowledge": 58
       }
     }
+  ],
+  "2026-05-20": [
+    {
+      "callId": "8911574667723429917",
+      "title": "TOOLBX | Social Circle Ace",
+      "overall": 38,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": null,
+        "rapport": 65,
+        "objectionHandling": null,
+        "talkListenRatio": 62,
+        "nextStepsClose": 22,
+        "productKnowledge": 45
+      }
+    }
   ]
 }
