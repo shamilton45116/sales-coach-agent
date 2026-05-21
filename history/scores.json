@@ -513,5 +513,49 @@
         "productKnowledge": 45
       }
     }
+  ],
+  "2026-05-21": [
+    {
+      "callId": "9173825710844874269",
+      "title": "TOOLBX Technical Deep Dive | Scherer",
+      "overall": 28,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": null,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 55,
+        "nextStepsClose": 0,
+        "productKnowledge": 65
+      }
+    },
+    {
+      "callId": "3174729822791107999",
+      "title": "Call with Smith Phillips Building Supply - Christina Stover",
+      "overall": 51,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": null,
+        "rapport": 65,
+        "objectionHandling": null,
+        "talkListenRatio": 62,
+        "nextStepsClose": 41,
+        "productKnowledge": 52
+      }
+    },
+    {
+      "callId": "6172809329279469950",
+      "title": "Chick Lumber <> Toolbx - Pricing Call",
+      "overall": 35,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 38,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 28,
+        "nextStepsClose": 0,
+        "productKnowledge": 58
+      }
+    }
   ]
 }
