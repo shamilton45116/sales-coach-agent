@@ -557,5 +557,35 @@
         "productKnowledge": 58
       }
     }
+  ],
+  "2026-05-22": [
+    {
+      "callId": "9208191661805232028",
+      "title": "Call with Kellogg Supply Co. - Joe Gaca",
+      "overall": 48,
+      "verdict": "Needs Work",
+      "scores": {
+        "discovery": null,
+        "rapport": 72,
+        "objectionHandling": null,
+        "talkListenRatio": 68,
+        "nextStepsClose": 38,
+        "productKnowledge": 60
+      }
+    },
+    {
+      "callId": "652892061823926279",
+      "title": "TOOLBX Kick Off Call | Service Lumber",
+      "overall": 34,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": null,
+        "rapport": 72,
+        "objectionHandling": null,
+        "talkListenRatio": 68,
+        "nextStepsClose": 10,
+        "productKnowledge": 55
+      }
+    }
   ]
 }
