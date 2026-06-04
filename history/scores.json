@@ -587,5 +587,21 @@
         "productKnowledge": 55
       }
     }
+  ],
+  "2026-06-04": [
+    {
+      "callId": "2419297824639656000",
+      "title": "ToolBox Integration",
+      "overall": 28,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": null,
+        "rapport": 55,
+        "objectionHandling": null,
+        "talkListenRatio": 52,
+        "nextStepsClose": 0,
+        "productKnowledge": 45
+      }
+    }
   ]
 }
