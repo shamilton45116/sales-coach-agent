@@ -39,18 +39,26 @@ For TOOLBX, strong discovery means uncovering the following (not all will apply 
 
 **SPECIAL CASE:** If this is an onboarding, implementation, or post-sale call, score N/A (return null for discovery score) — discovery is not the goal of these calls.
 
-**STRICTER THRESHOLDS:**
-0-29: Rep pitched immediately without asking questions OR dominated talk time and clearly didn't create space for discovery; critical info like ERP unknown AND rep asked fewer than 3 discovery questions; may have asked 1-2 surface questions but learned almost nothing actionable
-30-49: Minimal discovery; rep asked 3-5 questions but they were generic or surface-level; may know ERP but pain points, decision maker, and business priorities remain unclear; didn't probe deeply on any topic
-50-64: Decent discovery; rep asked 5-7 questions and uncovered some critical info (ERP + at least 2 of: pain points, decision process, business priorities, current tech adoption); some depth but missed opportunities to go deeper
-65-79: Strong discovery; rep asked 7-9 meaningful questions; ERP, pain points, decision maker process, and business priorities all explored; rep probed follow-up questions to understand context
-80-100: Exceptional discovery; 10+ substantive questions; full picture including ERP, pain points, decision process, buying group, current tech satisfaction, business priorities, and competitive pressures — all uncovered naturally before pitching; rep demonstrated curiosity and patience
+**DRAMATICALLY STRICTER THRESHOLDS — MINIMUM QUESTION COUNTS ENFORCED:**
 
-**HARD RULES:**
-- If the rep asks fewer than 4 discovery questions total in a pre-sale call, cap Discovery score at 30
-- If the rep asks fewer than 6 discovery questions, cap at 55
-- If ERP is unknown after a discovery or demo call, cap at 45
-- If pain points are not clearly identified, cap at 50
+0-29: Rep pitched immediately without asking questions OR dominated talk time and clearly didn't create space for discovery; critical info like ERP unknown AND rep asked fewer than 5 discovery questions total; may have asked 1-3 surface questions but learned almost nothing actionable; no meaningful exploration of dealer's business
+
+30-49: Weak discovery; rep asked 5-7 questions but they were generic or surface-level; may know ERP but pain points, decision maker, and business priorities remain unclear; didn't probe deeply on any topic; failed to uncover at least 3 critical pieces of TOOLBX-specific context
+
+50-64: Adequate discovery; rep asked 8-10 questions and uncovered some critical info (ERP + at least 3 of: pain points, decision process, business priorities, current tech adoption, buying group); some depth but missed opportunities to go deeper; left significant gaps in understanding dealer's situation
+
+65-79: Strong discovery; rep asked 11-14 meaningful questions; ERP, pain points, decision maker process, and business priorities all explored; rep probed follow-up questions to understand context; uncovered at least 5 critical pieces of TOOLBX context
+
+80-100: Exceptional discovery; 15+ substantive questions; full picture including ERP, pain points, decision process, buying group, current tech satisfaction, business priorities, and competitive pressures — all uncovered naturally before pitching; rep demonstrated curiosity and patience; every TOOLBX discovery dimension explored with depth
+
+**HARD RULES — MINIMUM QUESTION COUNTS:**
+- If the rep asks fewer than 5 discovery questions total in a pre-sale call, cap Discovery score at 29
+- If the rep asks fewer than 8 discovery questions, cap at 49
+- If the rep asks fewer than 11 discovery questions, cap at 64
+- If ERP is unknown after a discovery or demo call, cap at 40
+- If pain points are not clearly identified, cap at 45
+- If decision-maker process is not explored, cap at 55
+- If rep asked questions but didn't probe or follow up on any answers, cap at 50
 
 DIMENSION 2 — RAPPORT & TRUST (0-100)
 These customers are not tech-savvy and are often skeptical. Building trust is critical.
@@ -77,128 +85,171 @@ Common TOOLBX objections and what good looks like:
 DIMENSION 4 — TALK / LISTEN RATIO (0-100)
 These customers need to feel heard — especially owners who are used to being in charge. Reps who monologue kill deals.
 
-**DRAMATICALLY HARSHER PENALTIES FOR MONOLOGUING:**
+**EVEN HARSHER PENALTIES — ZERO TOLERANCE FOR ONE-SIDED CALLS:**
 
-95-100 = rep spoke less than 25% of the time; created significant space for prospect to think, talk, and drive the conversation
-85-94 = rep spoke 25-35% of the time; asked great questions and paused to let prospect fully answer; true dialogue
-70-84 = rep spoke 35-45% of the time; solid back-and-forth, rep listened more than they talked
-55-69 = rep spoke 45-55% of the time; roughly balanced but rep could have created more space; some longer explanations but generally conversational
-40-54 = rep spoke 55-65% of the time; more talking than listening; at least one monologue over 90 seconds; prospect had limited airtime
-20-39 = rep spoke 65-75% of the time; clear monologuing; prospect struggled to get a word in; multiple monologues over 2 minutes
-10-19 = rep spoke 75-85% of the time; dominated the call; feature dumping; very little prospect engagement; may have one monologue over 3 minutes
-0-9 = rep spoke over 85% of the time; completely one-sided; prospect barely spoke; call was a presentation not a conversation
+95-100 = rep spoke less than 25% of the time; created significant space for prospect to think, talk, and drive the conversation; asked questions and stayed silent to let prospect fully process and respond
 
-**HARD RULES:**
-- If the rep has any uninterrupted monologue longer than 3 minutes without asking a question, cap score at 15
-- If the rep has 2+ monologues over 2 minutes each, cap score at 25
-- If the rep has 3+ monologues over 90 seconds each, cap at 40
-- If the rep talks over the prospect or cuts them off more than once, cap at 45
-- If the rep explains a feature for more than 60 seconds without checking for understanding, deduct 15 points
-- If the rep dominates the call and prospect speaks less than 30% of the time, cap at 35
+85-94 = rep spoke 25-35% of the time; asked great questions and paused to let prospect fully answer; true dialogue with prospect doing most of the talking
+
+70-84 = rep spoke 35-45% of the time; solid back-and-forth, rep listened more than they talked; prospect had ample airtime
+
+55-69 = rep spoke 45-55% of the time; roughly balanced but rep could have created more space; some longer explanations but generally conversational; prospect had adequate opportunities to speak
+
+40-54 = rep spoke 55-65% of the time; more talking than listening; at least one monologue over 90 seconds; prospect had limited airtime; call felt rep-driven
+
+25-39 = rep spoke 65-75% of the time; clear monologuing; prospect struggled to get a word in; multiple monologues over 2 minutes; very one-sided
+
+10-24 = rep spoke 75-85% of the time; heavily dominated the call; feature dumping; very little prospect engagement; may have one monologue over 3 minutes; prospect barely participated
+
+0-9 = rep spoke over 85% of the time; completely one-sided; prospect barely spoke at all; call was a presentation not a conversation; prospect may have given up trying to engage
+
+**HARD RULES — AUTOMATIC CAPS:**
+- If the rep has any uninterrupted monologue longer than 3 minutes without asking a question or pausing for engagement, cap score at 12
+- If the rep has any monologue longer than 4 minutes, cap at 8
+- If the rep has 2+ monologues over 2 minutes each, cap score at 22
+- If the rep has 3+ monologues over 90 seconds each, cap at 35
+- If the rep talks over the prospect or cuts them off more than once, cap at 40
+- If the rep explains a feature for more than 90 seconds without checking for understanding or asking a question, deduct 20 points
+- If the rep dominates the call and prospect speaks less than 30% of the time, cap at 28
+- If the prospect speaks less than 25% of the time, cap at 18
+- If the rep asks a question but then immediately answers it themselves without waiting for prospect response, deduct 15 points each time
+- If the call feels like a presentation or demo dump rather than a conversation, cap at 35
 
 DIMENSION 5 — NEXT STEPS & CLOSE (0-100)
 Every TOOLBX call should end with a specific, mutually agreed next step — not "I'll follow up" or "I'll send you something."
 
-**DRAMATICALLY STRICTER REQUIREMENTS — ZERO TOLERANCE FOR VAGUE CLOSES:**
+**ABSOLUTE ZERO TOLERANCE — MEETING MUST BE LOCKED IN ON THE CALL:**
 
-To score above 40, ALL of the following must happen:
-1. Prospect must explicitly verbally confirm the next step on the call (e.g., "Yes, that works," "Sounds good," "Let's do it," "I'll be there")
-2. A specific date and time (or tight timeframe like "Wednesday at 2pm") must be agreed upon
-3. Rep must take concrete action to lock it in ON THE CALL: sent calendar invite while on the call AND prospect explicitly acknowledged receiving it or seeing it appear in their calendar, OR meeting was booked live using a scheduling tool and confirmed on screen, OR prospect verbally committed to sending something by a specific date and rep confirmed they'll watch for it
+To score above 38, ALL THREE of the following must happen ON THIS CALL:
+1. Prospect must explicitly verbally confirm the next step (e.g., "Yes, that works," "Sounds good," "Let's do it," "I'll be there," "Perfect")
+2. A specific date and time (e.g., "Tuesday June 10th at 2pm" or "next Wednesday at 10am") must be mutually agreed upon — NOT "early next week" or "sometime Wednesday"
+3. Rep must LOCK IT IN with explicit confirmation ON THE CALL by doing ONE of the following:
+   a) Send calendar invite while on the call AND prospect explicitly confirms they received it, saw it pop up, or added it to their calendar before the call ends (e.g., "Got it," "I see it," "It's on my calendar," "Just accepted it"), OR
+   b) Book the meeting live using a scheduling tool and both parties confirm they see it scheduled on screen, OR
+   c) Prospect commits to sending something by a specific date and rep confirms receipt plan and follow-up cadence if not received
 
-**CRITICAL CLARIFICATION:** Simply saying "I'll send you a calendar invite" or "I'm sending the invite now" is NOT sufficient unless the prospect confirms they received it, saw it, or added it to their calendar before the call ends. If the rep sends an invite but gets no confirmation from the prospect that they have it, cap at 38.
+**CRITICAL:** Simply saying "I'll send you a calendar invite" or "Sending the invite now" or "I'm going to get that over to you" without the prospect explicitly confirming they received it before the call ends does NOT count as locking it in. Cap at 35.
+
+**CRITICAL:** If the rep says they sent an invite but the prospect gives no verbal confirmation they received it, saw it, or have it on their calendar before the call ends, cap at 35.
+
+**CRITICAL:** If no calendar invite is sent during the call at all, cap at 32.
+
+To score 40-49:
+- All THREE lock-in requirements above are met AND prospect verbally confirmed they have the meeting on their calendar
 
 To score 50-59:
-- All of the above, PLUS the agenda/purpose of the next conversation must be clear and mutually understood
+- All of the above, PLUS the agenda/purpose of the next conversation is clear and mutually understood (not just "follow up" or "touch base")
 
 To score 60-69:
-- All of the above, PLUS prospect explicitly confirmed they received the calendar invite ("Got it," "I see it," "It's on my calendar") OR the meeting was booked live on the call with mutual confirmation
+- All of the above, PLUS prospect explicitly confirmed they received and accepted the calendar invite during the call ("Got it," "I see it," "Just accepted," "It's in my calendar") OR the meeting was booked live with both parties seeing confirmation on screen
 
 To score 70-79:
-- All of the above, PLUS the rep confirmed who else will be on the call (if applicable) AND what the prospect needs to prepare or bring
+- All of the above, PLUS the rep confirmed who else will be on the call (if applicable) AND what the prospect needs to prepare, bring, or review beforehand
 
 To score 80-89:
-- All of the above, PLUS the prospect demonstrated clear ownership (e.g., "I'll make sure the team is ready," "I'll have those numbers for you," "I'm blocking off time to review this beforehand")
+- All of the above, PLUS the prospect demonstrated clear ownership and preparation commitment (e.g., "I'll make sure the team is ready," "I'll have those numbers for you," "I'm blocking off time to review this beforehand," "I'll prep my ops manager")
 
 To score 90-100:
-- All of the above, PLUS the prospect expressed enthusiasm or urgency about the next step (e.g., "I'm looking forward to seeing how this works," "This is exactly what we need to review," "Let's get this moving") — the next step feels like a shared priority, not a rep-driven task
+- All of the above, PLUS the prospect expressed enthusiasm, urgency, or emotional investment in the next step (e.g., "I'm looking forward to seeing how this works," "This is exactly what we need to review," "Let's get this moving," "I'm excited about this") — the next step feels like a shared priority and mutual commitment, not a rep-driven task
 
-**HARD RULES — these cap your score no matter what else happened:**
-- If the prospect does NOT verbally confirm the next step on the call, cap at 35
-- If no specific date or time is mentioned, cap at 25
-- If the rep says "I'll follow up" or "I'll send you something" or "I'll get that over to you" with no date and no prospect acknowledgment, cap at 20
-- If the call ends with "maybe," "we'll see," "I'll have to check," "let me think about it," or "I'll talk to my team" and the rep does NOT secure a specific follow-up time before the call ends, cap at 30
-- If the rep proposes a next step but the prospect is silent or non-committal and the rep doesn't re-engage to get explicit confirmation, cap at 35
-- If there is no next step mentioned at all, score 0-5
-- If the rep sends a calendar invite but does NOT get explicit confirmation from the prospect that they received it or saw it before the call ends, cap at 38
-- If the rep says they will send a calendar invite but does not actually send it during the call, cap at 35
-- If the meeting is not booked live with mutual confirmation AND the prospect does not confirm receipt of the calendar invite, cap at 38
+**HARD RULES — AUTOMATIC CAPS (these override everything else):**
+- If the prospect does NOT verbally confirm the next step on the call, cap at 32
+- If no specific date AND time are mentioned (not "early next week" or "sometime Wednesday" — must be "Wednesday June 12 at 2pm"), cap at 25
+- If the rep sends a calendar invite but does NOT get explicit confirmation from the prospect that they received it, saw it, or added it to their calendar before the call ends, cap at 35
+- If the rep says they will send a calendar invite but does NOT actually send it during the call, cap at 32
+- If the rep says "I'll follow up" or "I'll send you something" or "I'll get that over to you" with no confirmed date/time and no prospect acknowledgment, cap at 18
+- If the call ends with "maybe," "we'll see," "I'll have to check," "let me think about it," or "I'll talk to my team" and the rep does NOT secure a specific follow-up time before the call ends, cap at 28
+- If the rep proposes a next step but the prospect is silent, non-committal, or hesitant and the rep doesn't re-engage to get explicit confirmation, cap at 30
+- If there is no next step mentioned at all, score 0-8
+- If the meeting is not locked in with explicit calendar confirmation during the call, cap at 35
+- If the only next step is "I'll send you a proposal" or "I'll send pricing" with no meeting scheduled, cap at 30
 
 **SCORING GUIDE:**
 0-10: No next step mentioned, or call ended abruptly with no follow-up plan
 11-20: Vague next step ("I'll follow up," "I'll send info," "I'll get that to you") with no date, time, or commitment from prospect
-21-30: Rep proposed a next step, but prospect gave a non-committal response ("maybe," "we'll see," "I'll think about it") and rep did not secure a specific follow-up time
-31-38: Prospect verbally agreed to a next step with specific date/time, but rep sent calendar invite without getting confirmation the prospect received it, OR no concrete action taken to lock it in
-39-50: Prospect verbally confirmed next step with specific date/time, rep sent invite or booked meeting on call, AND prospect explicitly acknowledged receiving it or seeing it
-51-59: All of the above, plus agenda/purpose is clear and mutually understood
-60-69: All of the above, plus prospect explicitly confirmed receipt during the call ("Got it," "I see it," "It's in my calendar")
+21-28: Rep proposed a next step, but prospect gave a non-committal response ("maybe," "we'll see," "I'll think about it") and rep did not secure a specific follow-up time
+29-35: Prospect verbally agreed to a next step with specific date/time, but rep either didn't send calendar invite on the call OR sent it without getting explicit confirmation the prospect received it before call ended
+36-39: Prospect verbally confirmed next step with specific date/time, AND rep sent invite on the call, but confirmation of receipt was unclear or ambiguous
+40-49: Prospect verbally confirmed next step with specific date/time, rep sent invite or booked meeting on call, AND prospect explicitly confirmed they have it ("Got it," "I see it," "It's on my calendar")
+50-59: All of the above, plus agenda/purpose is clear and mutually understood
+60-69: All of the above, plus prospect explicitly confirmed receipt and acceptance during the call with enthusiasm
 70-79: All of the above, plus rep confirmed attendees and what prospect needs to prepare
-80-89: All of the above, plus prospect demonstrated clear ownership of the next step
-90-100: All of the above, plus prospect expressed enthusiasm or urgency; next step feels like a shared commitment
+80-89: All of the above, plus prospect demonstrated clear ownership and preparation commitment
+90-100: All of the above, plus prospect expressed enthusiasm or urgency; next step feels like a shared commitment with emotional investment
 
 DIMENSION 6 — PRODUCT KNOWLEDGE (0-100)
 
-**STRICTER GRADING — HIGHER EXPECTATIONS FOR TOOLBX-SPECIFIC EXPERTISE:**
+**MUCH STRICTER GRADING — HIGHER BAR FOR TOOLBX EXPERTISE:**
 
 **FOR POST-SALE / ONBOARDING / IMPLEMENTATION CALLS:**
-These calls require even deeper technical fluency because the dealer has already bought and now needs confidence that implementation will succeed. Reps must be able to answer detailed questions about timelines, integrations, data migration, training, and technical setup.
+These calls require deep technical fluency because the dealer has already bought and needs confidence that implementation will succeed. Reps must answer detailed questions about timelines, integrations, data migration, training, and technical setup without hesitation.
 
-0-29: Could not answer basic implementation questions; had to defer multiple times on timeline, integration steps, or technical setup; gave vague or incorrect information; dealer likely left feeling uncertain about the process
-30-49: Struggled with implementation details; could cover basics but lacked confidence on technical questions; had to defer at least once on something fundamental like ERP integration steps, data migration, or training timeline; explanations were unclear or generic; dealer may be concerned about the process
-50-64: Decent implementation knowledge but not strong enough for a post-sale call; could answer most questions but lacked specificity on timelines, technical steps, or dealer-specific setup; missed opportunities to proactively address common implementation concerns; competent but not confidence-inspiring
-65-79: Strong implementation fluency; confidently explained timelines, ERP integration process, training plan, and next steps; answered technical questions without hesitation; made the process feel clear and manageable for this specific dealer; dealer likely felt reassured
-80-89: Expert-level implementation knowledge; anticipated dealer questions before they were asked; explained complex technical steps in dealer-friendly terms; provided specific examples from similar implementations; addressed potential roadblocks proactively; dealer felt fully confident in the process
-90-100: Masterful; demonstrated complete command of implementation process, technical integrations, change management, and dealer-specific nuances; made the dealer feel like they're in the best possible hands; proactively guided the conversation to cover everything the dealer needed to know; dealer left excited and confident
+0-29: Could not answer basic implementation questions; had to defer multiple times on timeline, integration steps, or technical setup; gave vague, incorrect, or contradictory information; dealer likely left feeling uncertain or concerned about the process; rep appeared unprepared for an implementation conversation
+
+30-49: Struggled significantly with implementation details; could cover only surface-level basics; lacked confidence on technical questions; had to defer at least twice on fundamental topics like ERP integration steps, data migration, training timeline, or go-live process; explanations were unclear, generic, or inconsistent; dealer may be worried about implementation success
+
+50-64: Adequate implementation knowledge but not strong enough to inspire confidence; could answer most basic questions but lacked specificity on timelines, technical steps, or dealer-specific setup; missed opportunities to proactively address common implementation concerns; had to defer at least once; competent but not confidence-inspiring; dealer likely has lingering concerns
+
+65-79: Strong implementation fluency; confidently explained timelines, ERP integration process, training plan, and next steps without deferring; answered technical questions clearly; made the process feel clear and manageable for this specific dealer and their ERP; dealer likely felt reassured and in good hands
+
+80-89: Expert-level implementation knowledge; anticipated dealer questions before they were asked; explained complex technical steps in dealer-friendly language; provided specific examples from similar implementations; addressed potential roadblocks proactively; made dealer feel like they're working with a true expert; dealer left fully confident
+
+90-100: Masterful; demonstrated complete command of implementation process, technical integrations, change management, and dealer-specific nuances; made the dealer feel like they're in the best possible hands; proactively guided the conversation to cover everything the dealer needed to know without being asked; translated technical complexity into simple, actionable steps; dealer left excited and deeply confident
 
 **HARD RULES FOR POST-SALE CALLS:**
-- If the rep cannot answer a direct implementation or technical question and has to defer, cap at 40
+- If the rep cannot answer a direct implementation or technical question and has to defer, cap at 38
 - If this happens twice, cap at 25
-- If the rep is vague about timelines or next steps in the implementation process, cap at 50
-- If the rep cannot explain the ERP integration or data migration process clearly, cap at 45
-- If the rep uses technical jargon without translating it into dealer-friendly language, cap at 50
+- If this happens three times, cap at 15
+- If the rep is vague about timelines or next steps in the implementation process, cap at 45
+- If the rep cannot explain the ERP integration or data migration process clearly when asked, cap at 40
+- If the rep uses technical jargon without translating it into dealer-friendly language, cap at 48
+- If the rep seems unprepared for the implementation conversation or doesn't know dealer-specific details, cap at 42
+- If the rep gives contradictory or inconsistent information, cap at 35
 
 **FOR PRE-SALE CALLS (discovery, demo, pricing, contract review):**
-0-29: Couldn't answer basic questions about TOOLBX capabilities, ERP compatibility, or pricing; had to "check and get back" on fundamental questions multiple times; gave incorrect information; spoke in vague generalities with no specifics; prospect likely left confused or concerned
-30-49: Knew the basics but struggled to explain how TOOLBX works in practice; couldn't connect features to dealer's context; had to defer at least one product question; surface-level understanding; may have confused prospect with jargon or unclear explanations; lacked confidence
-50-64: Decent product knowledge; covered core TOOLBX capabilities and could answer most questions; some connection to dealer's ERP and pain points, but explanations were generic or high-level; missed opportunities to differentiate or provide dealer-specific examples; competent but not compelling
-65-79: Strong command; confidently explained TOOLBX capabilities in the context of this dealer's ERP, pain points, and customer base; answered questions without hesitation; used specific examples or data; made it relevant to their situation; prospect likely felt confident in rep's expertise
-80-89: Expert-level fluency; spoke confidently about ERP integrations, AI Order Automation, onboarding process, adoption data, and competitive differentiation — all tailored to this dealer's specific context; anticipated questions before they were asked; provided concrete examples from similar dealers; demonstrated deep understanding of dealer operations
-90-100: Masterful; demonstrated deep expertise across all TOOLBX products AND the dealer's business; connected features to business outcomes specific to this dealer; used data and references naturally; addressed unspoken concerns; prospect likely thought "this person really knows their stuff"; rep sounded like a subject matter expert and trusted advisor, not just a salesperson
+
+0-29: Couldn't answer basic questions about TOOLBX capabilities, ERP compatibility, or pricing; had to "check and get back" on fundamental questions three or more times; gave incorrect or contradictory information; spoke in vague generalities with no specifics; prospect likely left confused, concerned, or doubting rep's expertise
+
+30-49: Knew only surface-level basics; struggled to explain how TOOLBX works in practice; couldn't connect features to dealer's context; had to defer at least two product or technical questions; very surface-level understanding; confused prospect with jargon or unclear explanations; lacked confidence; may have given inconsistent information
+
+50-64: Decent product knowledge; covered core TOOLBX capabilities and could answer most basic questions; some connection to dealer's ERP and pain points, but explanations were generic, high-level, or not tailored to this dealer's situation; had to defer once; missed opportunities to differentiate or provide dealer-specific examples; competent but not compelling or confidence-inspiring
+
+65-79: Strong command; confidently explained TOOLBX capabilities in the context of this dealer's specific ERP, pain points, and customer base; answered questions without hesitation or deferring; used specific examples, data, or dealer references; made it directly relevant to their situation; prospect likely felt confident in rep's expertise
+
+80-89: Expert-level fluency; spoke confidently and specifically about ERP integrations, AI Order Automation, onboarding process, adoption data, ROI, and competitive differentiation — all tailored to this dealer's specific context; anticipated questions before they were asked; provided concrete examples from similar dealers in similar ERPs; demonstrated deep understanding of how dealers operate; prospect felt like they're talking to a subject matter expert
+
+90-100: Masterful; demonstrated deep expertise across all TOOLBX products AND the dealer's business; connected features to business outcomes specific to this dealer's situation; used data, ROI examples, and dealer references naturally and compellingly; addressed unspoken concerns proactively; prospect likely thought "this person really knows their stuff and understands my business"; rep sounded like a trusted subject matter expert and industry advisor, not a salesperson reading a script
 
 **HARD RULES FOR PRE-SALE CALLS:**
-- If the rep cannot answer a direct product question and has to defer or "get back to them," cap at 45
-- If this happens twice, cap at 30
-- If the rep gives incorrect information about TOOLBX capabilities, cap at 35
-- If the rep cannot explain how TOOLBX integrates with the dealer's ERP (when ERP is known), cap at 50
-- If the rep uses jargon or technical terms without explaining them in dealer-friendly language, cap at 55
+- If the rep cannot answer a direct product question and has to defer or "get back to them," cap at 42
+- If this happens twice, cap at 28
+- If this happens three or more times, cap at 18
+- If the rep gives incorrect information about TOOLBX capabilities, cap at 32
+- If the rep cannot explain how TOOLBX integrates with the dealer's ERP when ERP is known, cap at 45
+- If the rep uses jargon or technical terms without explaining them in dealer-friendly language, cap at 52
+- If the rep cannot connect TOOLBX features to this dealer's specific pain points or business priorities, cap at 55
+- If explanations are generic and not tailored to this dealer's situation, cap at 58
 
 VERDICT thresholds: Strong (75-100), Solid (55-74), Needs Work (35-54), Struggling (0-34)
 
 **Overall score calculation:**
-- If this is a PRE-SALE call (discovery, demo, pricing, contract review): weighted average — Discovery 20%, Objection Handling 10%, Next Steps 40%, Talk/Listen 20%, Rapport 5%, Product Knowledge 5%
-- If this is a POST-SALE call (onboarding, implementation, check-in): exclude discovery and objection handling from the calculation entirely. Weight Next Steps 50%, Talk/Listen 20%, Rapport 10%, Product Knowledge 20%
+- If this is a PRE-SALE call (discovery, demo, pricing, contract review): weighted average — Discovery 25%, Objection Handling 10%, Next Steps 40%, Talk/Listen 15%, Rapport 5%, Product Knowledge 5%
+- If this is a POST-SALE call (onboarding, implementation, check-in): exclude discovery and objection handling from the calculation entirely. Weight Next Steps 45%, Talk/Listen 20%, Rapport 10%, Product Knowledge 25%
 
-**HARD CAPS ON OVERALL SCORE (these override the weighted average):**
-- If Next Steps score is below 40, cap overall score at 48
-- If Next Steps score is below 30, cap overall at 38
-- If Next Steps score is below 20, cap overall at 28
-- If Next Steps score is 0-10, cap overall at 18
-- If Talk/Listen score is below 30, cap overall at 45
-- If Talk/Listen score is below 20, cap overall at 35
-- If Discovery score is below 30 on a pre-sale call, cap overall at 48
-- If Product Knowledge is below 50 on a post-sale call, cap overall at 45
-- If Product Knowledge is below 45 on any call, cap overall at 50
-- Apply the lowest cap if multiple apply
+**HARD CAPS ON OVERALL SCORE (these override the weighted average — apply the strictest cap if multiple apply):**
+- If Next Steps score is below 40, cap overall score at 45
+- If Next Steps score is below 30, cap overall at 35
+- If Next Steps score is below 20, cap overall at 25
+- If Next Steps score is 0-10, cap overall at 15
+- If Talk/Listen score is below 30, cap overall at 42
+- If Talk/Listen score is below 25, cap overall at 35
+- If Talk/Listen score is below 20, cap overall at 28
+- If Discovery score is below 30 on a pre-sale call, cap overall at 45
+- If Discovery score is below 40 on a pre-sale call, cap overall at 52
+- If Product Knowledge is below 50 on a post-sale call, cap overall at 42
+- If Product Knowledge is below 45 on any call, cap overall at 48
+- If Product Knowledge is below 40, cap overall at 42
+- Apply the lowest cap if multiple caps apply
 
 FEEDBACK RULES:
 - strengths and coachingNotes: 0-5 items each
@@ -206,10 +257,10 @@ FEEDBACK RULES:
 - Every item must cite a specific quote or moment from the transcript
 - Coaching notes should be specific to TOOLBX context where possible (e.g. "Rep missed asking about ERP" not just "Rep missed discovery questions")
 - **MANDATORY:** If Talk/Listen ratio is below 40, include a coaching note about monologuing with a specific example of where the rep talked too long without engaging the prospect
-- **MANDATORY:** If Next Steps score is below 40, include a coaching note about failing to get explicit confirmation that the prospect received the calendar invite or that the meeting was booked live with mutual confirmation, citing the exact end-of-call moment
-- **MANDATORY:** If Discovery score is below 50 on a pre-sale call, include a coaching note identifying which critical TOOLBX discovery questions were missed (ERP, pain points, decision maker, buying group, etc.)
-- **MANDATORY:** If Product Knowledge score is below 55, include a coaching note about a specific moment where the rep struggled to answer a question or explain a feature clearly in dealer-specific terms
-- **MANDATORY:** If Product Knowledge score is below 50 on a post-sale call, include a coaching note about lack of confidence or clarity on implementation/technical details, with a specific example
+- **MANDATORY:** If Next Steps score is below 40, include a coaching note explaining exactly why the close failed: no calendar invite sent, no confirmation from prospect they received it, vague date/time, or no verbal commitment — cite the exact end-of-call moment
+- **MANDATORY:** If Discovery score is below 50 on a pre-sale call, include a coaching note identifying which critical TOOLBX discovery questions were missed (ERP, pain points, decision maker, buying group, current tech, etc.) and citing moments where rep pitched instead of asking
+- **MANDATORY:** If Product Knowledge score is below 55, include a coaching note about a specific moment where the rep struggled to answer a question, had to defer, or failed to explain a feature clearly in dealer-specific terms
+- **MANDATORY:** If Product Knowledge score is below 50 on a post-sale call, include a coaching note about lack of confidence or clarity on implementation/technical details, with a specific example of a question the rep couldn't answer or a moment where they seemed unprepared
 
 Return ONLY valid JSON, no markdown, no preamble:
 {"scores":{"discovery":0,"rapport":0,"objectionHandling":0,"talkListenRatio":0,"nextStepsClose":0,"productKnowledge":0},"overall":0,"verdict":"Solid","callSummary":"2-3 sentences: what type of call this was, what happened, and where the deal stands","strengths":[{"point":"what they did well","evidence":"exact quote or moment from transcript"}],"coachingNotes":[{"note":"what to improve — specific to TOOLBX context","callMoment":"exact quote or moment from transcript"}],"priorityAction":"the single most important thing this rep must do differently — one sentence, TOOLBX-specific","momentOfTruth":"the one quote from the transcript that best captures how the call went","nextCallTip":"one tactical thing they can do or say on their very next TOOLBX call"}`;
@@ -227,11 +278,15 @@ IMPORTANT: Every strength and coaching note must reference a specific quote or m
 If this is an onboarding, implementation, or post-sale call, return null for discovery and objectionHandling scores.
 
 Pay close attention to:
-1. Whether the rep is monologuing or creating space for dialogue — score Talk/Listen harshly if the rep dominates; cap at 15 if any monologue exceeds 3 minutes; cap at 25 if 2+ monologues over 2 minutes; cap at 35 if prospect speaks less than 30% of the time
-2. Whether the prospect explicitly confirmed the next step verbally on this call AND whether the prospect confirmed they received the calendar invite or the meeting was booked live with mutual confirmation — if the rep sends an invite but the prospect does not acknowledge receiving it before the call ends, cap Next Steps at 38; if no date/time agreed, cap at 25; if vague "I'll follow up," cap at 20
-3. How many discovery questions the rep asked — if fewer than 4 on a pre-sale call, cap Discovery at 30; if fewer than 6, cap at 55
-4. Whether the rep had to defer any product questions — if yes once, cap Product Knowledge at 45 (pre-sale) or 40 (post-sale); if twice, cap at 30 (pre-sale) or 25 (post-sale); if rep couldn't explain TOOLBX in dealer-specific terms, cap at 55 (pre-sale) or 50 (post-sale)
-5. For post-sale calls, whether the rep demonstrated strong implementation knowledge and could confidently answer technical questions about timelines, ERP integration, and next steps — if not, cap Product Knowledge at 50 or below
+1. HOW MANY DISCOVERY QUESTIONS the rep actually asked — count them carefully. If fewer than 5 on a pre-sale call, cap Discovery at 29; if fewer than 8, cap at 49; if fewer than 11, cap at 64. Discovery score must reflect question count.
+
+2. Whether the rep is monologuing or creating space for dialogue — score Talk/Listen extremely harshly if the rep dominates; cap at 12 if any monologue exceeds 3 minutes; cap at 22 if 2+ monologues over 2 minutes; cap at 28 if prospect speaks less than 30% of the time; cap at 18 if prospect speaks less than 25%
+
+3. WHETHER THE PROSPECT EXPLICITLY CONFIRMED THEY RECEIVED THE CALENDAR INVITE before the call ended — simply saying "I'll send you an invite" or "sending it now" does NOT count unless prospect confirms "Got it," "I see it," "It's on my calendar" before call ends. If rep sends invite but prospect doesn't confirm receipt on the call, cap Next Steps at 35. If no invite sent at all, cap at 32. If no specific date AND time agreed (not "early next week" but "Tuesday June 10 at 2pm"), cap at 25. If vague "I'll follow up," cap at 18.
+
+4. Whether the rep had to defer any product questions — if yes once, cap Product Knowledge at 42 (pre-sale) or 38 (post-sale); if twice, cap at 28 (pre-sale) or 25 (post-sale); if three times, cap at 18 (pre-sale) or 15 (post-sale); if rep couldn't explain TOOLBX in dealer-specific terms, cap at 55 (pre-sale) or 48 (post-sale)
+
+5. For post-sale calls, whether the rep demonstrated strong implementation knowledge and could confidently answer technical questions about timelines, ERP integration, and next steps — if not, cap Product Knowledge at 45 or below
 
 --- TRANSCRIPT ---
 ${transcript}
