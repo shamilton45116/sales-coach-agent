@@ -603,5 +603,35 @@
         "productKnowledge": 45
       }
     }
+  ],
+  "2026-06-05": [
+    {
+      "callId": "8519164699754467490",
+      "title": "Stockham Lumber <> Toolbx",
+      "overall": 38,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 30,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 22,
+        "nextStepsClose": 28,
+        "productKnowledge": 55
+      }
+    },
+    {
+      "callId": "6196256260654158892",
+      "title": "TOOLBX | Island Lumber",
+      "overall": 28,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 38,
+        "rapport": 65,
+        "objectionHandling": null,
+        "talkListenRatio": 62,
+        "nextStepsClose": 5,
+        "productKnowledge": 48
+      }
+    }
   ]
 }
