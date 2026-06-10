@@ -633,5 +633,21 @@
         "productKnowledge": 48
       }
     }
+  ],
+  "2026-06-10": [
+    {
+      "callId": "8525903417974307868",
+      "title": "Book A Demo Call",
+      "overall": 25,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 42,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 48,
+        "nextStepsClose": 0,
+        "productKnowledge": 52
+      }
+    }
   ]
 }
