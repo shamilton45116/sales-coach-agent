@@ -649,5 +649,21 @@
         "productKnowledge": 52
       }
     }
+  ],
+  "2026-06-12": [
+    {
+      "callId": "3505607941554996944",
+      "title": "Inbound Call with (703) 727-8181",
+      "overall": 28,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": null,
+        "rapport": 72,
+        "objectionHandling": null,
+        "talkListenRatio": 62,
+        "nextStepsClose": 8,
+        "productKnowledge": 68
+      }
+    }
   ]
 }
