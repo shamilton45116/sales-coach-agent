@@ -666,5 +666,21 @@
       }
     }
   ],
-  "2026-06-16": []
+  "2026-06-16": [],
+  "2026-06-17": [
+    {
+      "callId": "63855673389512882",
+      "title": "Empire Building Materials + TOOLBX (Proposal)",
+      "overall": 15,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": null,
+        "rapport": 65,
+        "objectionHandling": null,
+        "talkListenRatio": 55,
+        "nextStepsClose": 0,
+        "productKnowledge": 42
+      }
+    }
+  ]
 }
