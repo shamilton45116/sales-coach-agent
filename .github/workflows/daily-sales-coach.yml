@@ -30,6 +30,7 @@ jobs:
           SLACK_CHANNEL:          ${{ secrets.SLACK_CHANNEL }}
           SLACK_SUMMARY_CHANNEL:  ${{ secrets.SLACK_SUMMARY_CHANNEL }}
           GONG_TEAM_EMAILS:       ${{ secrets.GONG_TEAM_EMAILS }}
+          SALES_HUB_URL:          ${{ secrets.SALES_HUB_URL }}
         run: node index.js
 
       - name: Commit score history
