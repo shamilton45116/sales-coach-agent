@@ -6,6 +6,8 @@ const { scoreCall }                               = require('./scorer');
 const { sendDailyReport }                         = require('./reporter');
 const { saveToday, getWoWTrends }                 = require('./history');
 
+const SALES_HUB_URL = process.env.SALES_HUB_URL; // e.g. https://sales-hub-api.onrender.com
+
 const LIBRARY_THRESHOLD = 80;
 const RUN_LOCK_FILE     = path.join(__dirname, 'history', 'last-run.json');
 
@@ -20,6 +22,38 @@ function alreadyRanToday() {
 function markRanToday() {
   const today = new Date().toISOString().split('T')[0];
   fs.writeFileSync(RUN_LOCK_FILE, JSON.stringify({ lastRun: today }));
+}
+
+async function syncToSalesHub(scoredCalls) {
+  if (!SALES_HUB_URL) {
+    console.log('⚠️  SALES_HUB_URL not set — skipping Sales Hub sync');
+    return;
+  }
+  const today = new Date().toISOString().split('T')[0];
+  const scores = scoredCalls
+    .filter(c => c.feedback && c.feedback.overall !== undefined)
+    .map(c => ({
+      callId:  c.id,
+      rep:     c.rep,
+      title:   c.title,
+      overall: c.feedback.overall,
+      verdict: c.feedback.verdict,
+      scores:  c.feedback.scores,
+    }));
+
+  if (scores.length === 0) return;
+
+  try {
+    const res = await fetch(`${SALES_HUB_URL}/api/call-scores/sync`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: today, scores }),
+    });
+    const data = await res.json();
+    console.log(`📊 Sales Hub sync: ${data.upserted || 0} scores saved`);
+  } catch (err) {
+    console.error('⚠️  Sales Hub sync failed (non-fatal):', err.message);
+  }
 }
 
 async function main() {
@@ -66,6 +100,9 @@ async function main() {
 
   const history   = saveToday(scoredCalls);
   const wowTrends = getWoWTrends(history);
+
+  // Sync scores to Sales Hub database
+  await syncToSalesHub(scoredCalls);
 
   await sendDailyReport(scoredCalls, wowTrends);
   console.log('\n✅ Done.');
