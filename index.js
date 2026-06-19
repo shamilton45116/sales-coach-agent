@@ -7,6 +7,7 @@ const { sendDailyReport }                         = require('./reporter');
 const { saveToday, getWoWTrends }                 = require('./history');
 
 const SALES_HUB_URL = process.env.SALES_HUB_URL; // e.g. https://sales-hub-api.onrender.com
+const SALES_HUB_API_KEY = process.env.SALES_HUB_INTERNAL_API_KEY;
 
 const LIBRARY_THRESHOLD = 80;
 const RUN_LOCK_FILE     = path.join(__dirname, 'history', 'last-run.json');
@@ -44,9 +45,11 @@ async function syncToSalesHub(scoredCalls) {
   if (scores.length === 0) return;
 
   try {
+    const headers = { 'Content-Type': 'application/json' };
+    if (SALES_HUB_API_KEY) headers['Authorization'] = `Bearer ${SALES_HUB_API_KEY}`;
     const res = await fetch(`${SALES_HUB_URL}/api/call-scores/sync`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify({ date: today, scores }),
     });
     const data = await res.json();

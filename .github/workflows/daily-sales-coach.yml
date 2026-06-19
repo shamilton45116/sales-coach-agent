@@ -31,6 +31,7 @@ jobs:
           SLACK_SUMMARY_CHANNEL:  ${{ secrets.SLACK_SUMMARY_CHANNEL }}
           GONG_TEAM_EMAILS:       ${{ secrets.GONG_TEAM_EMAILS }}
           SALES_HUB_URL:          ${{ secrets.SALES_HUB_URL }}
+          SALES_HUB_INTERNAL_API_KEY: ${{ secrets.SALES_HUB_INTERNAL_API_KEY }}
         run: node index.js
 
       - name: Commit score history
