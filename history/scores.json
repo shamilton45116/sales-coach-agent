@@ -684,5 +684,21 @@
     }
   ],
   "2026-06-18": [],
-  "2026-06-23": []
+  "2026-06-23": [],
+  "2026-06-24": [
+    {
+      "callId": "5989328090605728617",
+      "title": "Johnson Lumber <> Toolbx",
+      "overall": 10,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 28,
+        "rapport": 52,
+        "objectionHandling": null,
+        "talkListenRatio": 8,
+        "nextStepsClose": 8,
+        "productKnowledge": 62
+      }
+    }
+  ]
 }
