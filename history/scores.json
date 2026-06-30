@@ -702,5 +702,21 @@
     }
   ],
   "2026-06-25": [],
-  "2026-06-26": []
+  "2026-06-26": [],
+  "2026-06-30": [
+    {
+      "callId": "6855496533798978625",
+      "title": "Sara Gonzalez and Pouyan Mirsaeidi",
+      "overall": 10,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 29,
+        "rapport": 62,
+        "objectionHandling": null,
+        "talkListenRatio": 55,
+        "nextStepsClose": 0,
+        "productKnowledge": 35
+      }
+    }
+  ]
 }
