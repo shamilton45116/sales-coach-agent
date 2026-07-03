@@ -118,66 +118,59 @@ These customers need to feel heard — especially owners who are used to being i
 DIMENSION 5 — NEXT STEPS & CLOSE (0-100)
 Every TOOLBX call should end with a specific, mutually agreed next step — not "I'll follow up" or "I'll send you something."
 
-**ABSOLUTE ZERO TOLERANCE — MEETING MUST BE LOCKED IN ON THE CALL:**
+**CRITICAL NEW ENFORCEMENT — PROSPECT MUST VERBALLY CONFIRM SPECIFIC NEXT MEETING TIME ON THIS CALL:**
 
-To score above 38, ALL FOUR of the following must happen ON THIS CALL:
-1. Prospect must explicitly verbally confirm the next step (e.g., "Yes, that works," "Sounds good," "Let's do it," "I'll be there," "Perfect")
-2. A specific date and time (e.g., "Tuesday June 10th at 2pm" or "next Wednesday at 10am") must be mutually agreed upon — NOT "early next week" or "sometime Wednesday"
-3. Rep must verbally state that they are sending a calendar invite during the call ("I'm sending you the invite right now," "Let me get that invite over to you," "Sending the calendar invite as we speak")
-4. Prospect must explicitly verbally confirm ON THIS CALL that they received the invite, saw it, or have it on their calendar (e.g., "Got it," "I see it," "Just accepted it," "It's on my calendar," "I saw it pop up," "Perfect, I have it") — this confirmation must happen BEFORE the call ends
+To score above 22, the prospect must explicitly verbally state ON THIS CALL a specific date and/or time they will meet or speak with the rep again (e.g., "Tuesday at 2pm works," "Let's do Wednesday," "Next week is good, how about Thursday?"). The rep proposing a time is NOT enough. The prospect must verbally agree to a specific time themselves during this call.
 
-**CRITICAL NEW RULE — CALENDAR INVITE CONFIRMATION IS MANDATORY:**
-If the rep says "I'll send you a calendar invite" or "I'm going to send that over" or "Sending the invite now" but the prospect does NOT explicitly confirm they received it before the call ends, cap at 32. Saying you'll send it is not enough. The prospect must confirm receipt during the call.
+**CRITICAL:** If the call ends with the rep saying "I'll send you a calendar invite" or "I'll follow up" or "I'll get that scheduled" but the prospect does NOT verbally state a specific day/time they'll meet during this call, cap at 22.
 
-**CRITICAL:** If no calendar invite is mentioned or sent during the call at all, cap at 25.
+**CRITICAL:** If the call ends with no next step mentioned at all, or just "I'll send you something" / "talk soon" with no date or time discussed, cap at 8.
 
-**CRITICAL:** If the call ends with no next step mentioned at all, or just "I'll follow up" / "I'll send you something" with no date, time, or commitment, cap at 12.
+To score 23-32:
+- Prospect verbally stated a specific day or timeframe for the next meeting during this call (e.g., "Tuesday works," "Next week," "Let's do the 15th"), but did NOT confirm a specific time, OR the commitment felt tentative or non-specific
+
+To score 33-39:
+- Prospect verbally confirmed a specific date AND time for the next meeting during this call (e.g., "Tuesday June 10th at 2pm works for me," "Let's do next Wednesday at 10am"), but either no calendar invite was mentioned, OR the rep said they'd send an invite but the prospect did not confirm they received it before the call ended
 
 To score 40-49:
-- All FOUR lock-in requirements above are met: prospect verbally confirmed next step, specific date/time agreed, rep stated they sent invite during the call, AND prospect explicitly confirmed they received it before call ended
+- Prospect verbally confirmed a specific date AND time during this call, AND the rep stated they are sending a calendar invite during the call, AND the prospect explicitly confirmed they received it before the call ended (e.g., "Got it," "I see it," "Just accepted")
 
 To score 50-59:
 - All of the above, PLUS the agenda/purpose of the next conversation is clear and mutually understood (not just "follow up" or "touch base")
 
 To score 60-69:
-- All of the above, PLUS the prospect's confirmation of receipt was enthusiastic or immediate ("Got it!" "Perfect, I see it" "Just accepted") — not hesitant or delayed
+- All of the above, PLUS the prospect's confirmation was enthusiastic or immediate ("Perfect!" "Looking forward to it" "Got it, I'm ready")
 
 To score 70-79:
 - All of the above, PLUS the rep confirmed who else will be on the call (if applicable) AND what the prospect needs to prepare, bring, or review beforehand
 
 To score 80-89:
-- All of the above, PLUS the prospect demonstrated clear ownership and preparation commitment (e.g., "I'll make sure the team is ready," "I'll have those numbers for you," "I'm blocking off time to review this beforehand," "I'll prep my ops manager")
+- All of the above, PLUS the prospect demonstrated clear ownership and preparation commitment (e.g., "I'll make sure the team is ready," "I'll have those numbers for you," "I'm blocking off time to review this beforehand")
 
 To score 90-100:
-- All of the above, PLUS the prospect expressed enthusiasm, urgency, or emotional investment in the next step (e.g., "I'm looking forward to seeing how this works," "This is exactly what we need to review," "Let's get this moving," "I'm excited about this") — the next step feels like a shared priority and mutual commitment, not a rep-driven task
+- All of the above, PLUS the prospect expressed enthusiasm, urgency, or emotional investment in the next step (e.g., "I'm looking forward to this," "This is exactly what we need," "Let's get this moving") — the next step feels like a shared priority and mutual commitment, not a rep-driven task
 
 **HARD RULES — AUTOMATIC CAPS (these override everything else):**
 - If the call ends with NO next step mentioned at all, score 0-8
-- If the rep says "I'll follow up" or "I'll send you something" or "I'll get that over to you" with no confirmed date/time and no prospect acknowledgment, cap at 12
-- If the prospect does NOT verbally confirm the next step on the call, cap at 28
-- If no specific date AND time are mentioned (not "early next week" or "sometime Wednesday" — must be "Wednesday June 12 at 2pm"), cap at 25
-- If no calendar invite is mentioned or sent during the call, cap at 25
-- If the rep mentions sending a calendar invite but does NOT get explicit verbal confirmation from the prospect that they received it before the call ends, cap at 32
-- If the call ends with "maybe," "we'll see," "I'll have to check," "let me think about it," or "I'll talk to my team" and the rep does NOT secure a specific follow-up time before the call ends, cap at 22
-- If the rep proposes a next step but the prospect is silent, non-committal, or hesitant and the rep doesn't re-engage to get explicit confirmation, cap at 26
-- If the only next step is "I'll send you a proposal" or "I'll send pricing" with no meeting scheduled, cap at 30
-
-**CRITICAL ENFORCEMENT:**
-The four requirements (verbal confirmation, specific date/time, rep sends invite on call, prospect confirms receipt on call) are ALL mandatory to score above 38. Missing any one of them caps the score at 32 or below. Be absolutely strict on this.
+- If the rep says "I'll follow up" or "I'll send you something" or "I'll get back to you" or "I'll send a calendar invite" and the prospect does NOT verbally state a specific day or time they'll meet during this call, cap at 22
+- If the prospect does NOT verbally confirm a specific date AND time during this call (not "early next week" but "Tuesday June 10 at 2pm"), cap at 32
+- If no calendar invite is mentioned or sent during the call, cap at 39
+- If the rep mentions sending a calendar invite but the prospect does NOT explicitly confirm they received it before the call ends, cap at 39
+- If the call ends with "maybe," "we'll see," "I'll have to check," "let me think about it," or "I'll talk to my team" and the rep does NOT get the prospect to verbally state a specific follow-up day/time before the call ends, cap at 18
+- If the rep proposes a next step but the prospect is silent, non-committal, or hesitant and the rep doesn't re-engage to get explicit verbal confirmation of a day/time, cap at 20
+- If the only next step is "I'll send you a proposal" or "I'll send pricing" with no meeting day/time verbally confirmed by prospect, cap at 28
 
 **SCORING GUIDE:**
 0-8: No next step mentioned at all, or call ended abruptly with no follow-up plan
-9-12: Vague next step ("I'll follow up," "I'll send info," "I'll get that to you") with no date, time, or commitment from prospect
-13-22: Rep proposed a next step, but prospect gave a non-committal response ("maybe," "we'll see," "I'll think about it") and rep did not secure a specific follow-up time
-23-28: Prospect verbally agreed to a next step with specific date/time, but no calendar invite was sent during the call
-29-32: Prospect verbally agreed to next step with specific date/time, rep stated they sent calendar invite during the call, but prospect did NOT explicitly confirm they received it before call ended
-33-39: All four requirements nearly met but one element was weak or unclear (e.g., prospect confirmation was ambiguous, or date/time was slightly vague like "early afternoon Wednesday")
-40-49: All four requirements clearly met: prospect verbally confirmed, specific date/time, rep sent invite on call, prospect explicitly confirmed receipt on call
-50-59: All of the above, plus agenda/purpose is clear and mutually understood
-60-69: All of the above, plus prospect's confirmation of receipt was enthusiastic or immediate
-70-79: All of the above, plus rep confirmed attendees and what prospect needs to prepare
-80-89: All of the above, plus prospect demonstrated clear ownership and preparation commitment
-90-100: All of the above, plus prospect expressed enthusiasm or urgency; next step feels like a shared commitment with emotional investment
+9-22: Rep proposed a next step or said "I'll follow up" / "I'll send an invite," but prospect did NOT verbally state a specific day or time they'll meet during this call; vague or one-sided commitment
+23-32: Prospect verbally stated a day or timeframe ("Tuesday," "next week") but not a specific time, OR commitment felt tentative
+33-39: Prospect verbally confirmed specific date AND time during this call, but no calendar invite sent or no confirmation from prospect they received it
+40-49: Prospect verbally confirmed specific date/time, rep sent invite during call, prospect confirmed receipt
+50-59: All of the above, plus clear agenda/purpose
+60-69: All of the above, plus enthusiastic confirmation from prospect
+70-79: All of the above, plus attendees and prep confirmed
+80-89: All of the above, plus prospect demonstrated ownership
+90-100: All of the above, plus prospect expressed enthusiasm and urgency
 
 DIMENSION 6 — PRODUCT KNOWLEDGE (0-100)
 
@@ -235,15 +228,16 @@ These calls require deep technical fluency because the dealer has already bought
 VERDICT thresholds: Strong (75-100), Solid (55-74), Needs Work (35-54), Struggling (0-34)
 
 **Overall score calculation:**
-- If this is a PRE-SALE call (discovery, demo, pricing, contract review): weighted average — Discovery 25%, Objection Handling 10%, Next Steps 40%, Talk/Listen 15%, Rapport 5%, Product Knowledge 5%
-- If this is a POST-SALE call (onboarding, implementation, check-in, proposal review): exclude discovery and objection handling from the calculation entirely. Weight Next Steps 40%, Talk/Listen 15%, Rapport 10%, Product Knowledge 35%
+- If this is a PRE-SALE call (discovery, demo, pricing, contract review): weighted average — Discovery 25%, Objection Handling 10%, Next Steps 35%, Talk/Listen 15%, Rapport 5%, Product Knowledge 15% (changed from 5% to 15%)
+- If this is a POST-SALE call (onboarding, implementation, check-in, proposal review): exclude discovery and objection handling from the calculation entirely. Weight Next Steps 35%, Talk/Listen 15%, Rapport 10%, Product Knowledge 40% (changed from 35% to 40%)
 
 **HARD CAPS ON OVERALL SCORE (these override the weighted average — apply the strictest cap if multiple apply):**
-- If Next Steps score is 0-8, cap overall at 10
-- If Next Steps score is 9-12, cap overall at 18
-- If Next Steps score is 13-20, cap overall at 22
-- If Next Steps score is 21-30, cap overall at 32
-- If Next Steps score is 31-38, cap overall at 42
+- If Next Steps score is 0-8, cap overall at 8
+- If Next Steps score is 9-15, cap overall at 15
+- If Next Steps score is 16-22, cap overall at 22
+- If Next Steps score is 23-28, cap overall at 28
+- If Next Steps score is 29-32, cap overall at 32
+- If Next Steps score is 33-39, cap overall at 39
 - If Next Steps score is below 50, cap overall at 48
 - If Talk/Listen score is below 30, cap overall at 42
 - If Talk/Listen score is below 25, cap overall at 35
@@ -252,8 +246,9 @@ VERDICT thresholds: Strong (75-100), Solid (55-74), Needs Work (35-54), Struggli
 - If Discovery score is below 40 on a pre-sale call, cap overall at 52
 - If Product Knowledge is below 50 on a post-sale call, cap overall at 38
 - If Product Knowledge is below 45 on any call, cap overall at 45
-- If Product Knowledge is below 40, cap overall at 40
-- If Product Knowledge is below 35 on a post-sale call, cap overall at 32
+- If Product Knowledge is below 40 on any call, cap overall at 40
+- If Product Knowledge is below 35 on any call, cap overall at 35
+- If Product Knowledge is below 30 on a post-sale call, cap overall at 30
 - Apply the lowest cap if multiple caps apply
 
 FEEDBACK RULES:
@@ -262,7 +257,7 @@ FEEDBACK RULES:
 - Every item must cite a specific quote or moment from the transcript
 - Coaching notes should be specific to TOOLBX context where possible (e.g. "Rep missed asking about ERP" not just "Rep missed discovery questions")
 - **MANDATORY:** If Talk/Listen ratio is below 40, include a coaching note about monologuing with a specific example of where the rep talked too long without engaging the prospect
-- **MANDATORY:** If Next Steps score is below 40, include a coaching note explaining exactly why the close failed: no calendar invite sent, no confirmation from prospect they received it, vague date/time, or no verbal commitment — cite the exact end-of-call moment
+- **MANDATORY:** If Next Steps score is below 40, include a coaching note explaining exactly why the close failed: prospect did not verbally state a specific day/time they'll meet during this call, no calendar invite sent, no confirmation from prospect they received it, or vague/non-committal — cite the exact end-of-call moment
 - **MANDATORY:** If Discovery score is below 50 on a pre-sale call, include a coaching note identifying which critical TOOLBX discovery questions were missed (ERP, pain points, decision maker, buying group, current tech, etc.) and citing moments where rep pitched instead of asking
 - **MANDATORY:** If Product Knowledge score is below 55, include a coaching note about a specific moment where the rep struggled to answer a question, had to defer, or failed to explain a feature clearly in dealer-specific terms
 - **MANDATORY:** If Product Knowledge score is below 50 on a post-sale call, include a coaching note about lack of confidence or clarity on implementation/technical details, with a specific example of a question the rep couldn't answer or a moment where they seemed unprepared
@@ -287,11 +282,11 @@ Pay close attention to:
 
 2. Whether the rep is monologuing or creating space for dialogue — score Talk/Listen extremely harshly if the rep dominates; cap at 12 if any monologue exceeds 3 minutes; cap at 22 if 2+ monologues over 2 minutes; cap at 28 if prospect speaks less than 30% of the time; cap at 18 if prospect speaks less than 25%
 
-3. WHETHER THE PROSPECT EXPLICITLY CONFIRMED THEY RECEIVED THE CALENDAR INVITE before the call ended — this is now MANDATORY. The rep must verbally state they are sending the invite during the call AND the prospect must verbally confirm they received it ("Got it," "I see it," "It's on my calendar") before the call ends. If the rep says "I'll send you an invite" or "sending it now" but the prospect does NOT confirm receipt on the call, cap Next Steps at 32. If no invite sent at all, cap at 25. If no specific date AND time agreed (not "early next week" but "Tuesday June 10 at 2pm"), cap at 25. If vague "I'll follow up," cap at 12. If no next step at all, cap at 8.
+3. WHETHER THE PROSPECT VERBALLY STATED A SPECIFIC DAY AND TIME THEY WILL MEET DURING THIS CALL — this is now the primary requirement for Next Steps above 22. The rep saying "I'll send you an invite" or "I'll follow up" is NOT enough. The prospect must verbally say a specific day/time ("Tuesday at 2pm works," "Let's do next Wednesday") during this call. If they don't, cap Next Steps at 22. If no next step mentioned at all, cap at 8.
 
 4. Whether the rep had to defer any product questions — if yes once, cap Product Knowledge at 42 (pre-sale) or 32 (post-sale); if twice, cap at 28 (pre-sale) or 18 (post-sale); if three times, cap at 18 (pre-sale) or 10 (post-sale); if rep couldn't explain TOOLBX in dealer-specific terms, cap at 55 (pre-sale) or 42 (post-sale)
 
-5. For post-sale calls, whether the rep demonstrated strong implementation knowledge and could confidently answer technical questions about timelines, ERP integration, and next steps — if not, cap Product Knowledge at 38 or below; post-sale calls now weight Product Knowledge at 35% so this is critical
+5. For post-sale calls, whether the rep demonstrated strong implementation knowledge and could confidently answer technical questions about timelines, ERP integration, and next steps — if not, cap Product Knowledge at 38 or below; post-sale calls now weight Product Knowledge at 40% so this is critical
 
 --- TRANSCRIPT ---
 ${transcript}
