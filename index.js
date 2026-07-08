@@ -47,15 +47,23 @@ async function syncToSalesHub(scoredCalls) {
   try {
     const headers = { 'Content-Type': 'application/json' };
     if (SALES_HUB_API_KEY) headers['Authorization'] = `Bearer ${SALES_HUB_API_KEY}`;
+    console.log(`📤 Sales Hub sync → POST ${SALES_HUB_URL}/api/call-scores/sync (${scores.length} scores, auth ${SALES_HUB_API_KEY ? 'present' : 'MISSING'})`);
     const res = await fetch(`${SALES_HUB_URL}/api/call-scores/sync`, {
       method: 'POST',
       headers,
       body: JSON.stringify({ date: today, scores }),
     });
-    const data = await res.json();
-    console.log(`📊 Sales Hub sync: ${data.upserted || 0} scores saved`);
+    const raw = await res.text();
+    if (!res.ok) {
+      // Loud on failure: previously a bad URL/key failed silently and the dashboard stayed empty.
+      console.error(`❌ Sales Hub sync FAILED — HTTP ${res.status} ${res.statusText}. Body: ${raw.slice(0, 500)}`);
+      return;
+    }
+    let data = {};
+    try { data = JSON.parse(raw); } catch { /* non-JSON 200 */ }
+    console.log(`📊 Sales Hub sync: ${data.upserted || 0} saved${data.skipped ? `, ${data.skipped} skipped` : ''}`);
   } catch (err) {
-    console.error('⚠️  Sales Hub sync failed (non-fatal):', err.message);
+    console.error('❌ Sales Hub sync FAILED (network/exception):', err.message);
   }
 }
 
