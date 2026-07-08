@@ -1,0 +1,33 @@
+name: Recover Reps & Backfill (one-time)
+
+# Manual only. Repairs the ~40 April–June call-score records that have no rep,
+# by re-fetching the internal rep per Gong callId, then backfilling to Sales Hub.
+# Run once with apply=false (dry run) to preview, then apply=true to write.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Set true to actually POST the backfill (false = dry run)'
+        required: true
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: Recover reps and backfill
+        env:
+          GONG_ACCESS_KEY:            ${{ secrets.GONG_ACCESS_KEY }}
+          GONG_ACCESS_KEY_SECRET:     ${{ secrets.GONG_ACCESS_KEY_SECRET }}
+          SALES_HUB_URL:              ${{ secrets.SALES_HUB_URL }}
+          SALES_HUB_INTERNAL_API_KEY: ${{ secrets.SALES_HUB_INTERNAL_API_KEY }}
+          APPLY: ${{ github.event.inputs.apply == 'true' && '1' || '0' }}
+        run: node scripts/recover-reps-backfill.js
