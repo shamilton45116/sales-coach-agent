@@ -720,5 +720,21 @@
     }
   ],
   "2026-07-03": [],
-  "2026-07-07": []
+  "2026-07-07": [],
+  "2026-07-08": [
+    {
+      "callId": "9096629444293740581",
+      "title": "Call with Island Home Center & Lumber - Earl Vanbuskirk",
+      "overall": 8,
+      "verdict": "Struggling",
+      "scores": {
+        "discovery": 29,
+        "rapport": 62,
+        "objectionHandling": 55,
+        "talkListenRatio": 62,
+        "nextStepsClose": 0,
+        "productKnowledge": 45
+      }
+    }
+  ]
 }
