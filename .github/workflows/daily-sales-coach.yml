@@ -30,8 +30,11 @@ jobs:
           SLACK_CHANNEL:          ${{ secrets.SLACK_CHANNEL }}
           SLACK_SUMMARY_CHANNEL:  ${{ secrets.SLACK_SUMMARY_CHANNEL }}
           GONG_TEAM_EMAILS:       ${{ secrets.GONG_TEAM_EMAILS }}
-          SALES_HUB_URL:          ${{ secrets.SALES_HUB_URL }}
-          SALES_HUB_INTERNAL_API_KEY: ${{ secrets.SALES_HUB_INTERNAL_API_KEY }}
+          # Sales Hub sync disabled 2026-07-10 — Call Intelligence (gong-call-review skill,
+          # 1–5 SPICED) is now the sole producer of call_scores. Slack coaching continues.
+          # To restore, re-add these two env vars (index.js skips sync when SALES_HUB_URL is unset).
+          # SALES_HUB_URL:          ${{ secrets.SALES_HUB_URL }}
+          # SALES_HUB_INTERNAL_API_KEY: ${{ secrets.SALES_HUB_INTERNAL_API_KEY }}
         run: node index.js
 
       - name: Commit score history
