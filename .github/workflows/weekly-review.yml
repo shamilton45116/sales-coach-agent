@@ -1,8 +1,9 @@
 name: Weekly Rubric Review
 
 on:
-  schedule:
-    - cron: '0 14 * * 5'   # Every Friday at 10am ET (14:00 UTC)
+  # Schedule disabled 2026-07-13 — Sales Coach decommissioned (see daily-sales-coach.yml).
+  # schedule:
+  #   - cron: '0 14 * * 5'   # Every Friday at 10am ET (14:00 UTC)
   workflow_dispatch:        # Manual trigger for testing
 
 permissions:

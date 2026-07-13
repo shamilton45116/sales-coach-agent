@@ -1,8 +1,11 @@
 name: Daily Sales Coach
 
 on:
-  schedule:
-    - cron: '0 13 * * 1-5'
+  # Schedule disabled 2026-07-13 — Sales Coach decommissioned. Replaced by Call Intelligence
+  # (gong-call-review skill + gong-call-review-daily task; scores live in the Sales Hub).
+  # This stops the daily #sales-coach Slack post. Re-enable by uncommenting the schedule.
+  # schedule:
+  #   - cron: '0 13 * * 1-5'
   workflow_dispatch:
 
 permissions:
